@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  --cdarkblack: #322D38;
+  --cblack: #37323E;
+  --cdarkgray: #3C3744;
+  --cgray: #57678B;
+  --cblue: #7296D1;
+  --clight: #B4C5E4;
+  --cwhitesec: #A9B3BE;
+  --cwhite: #FBFFF1;
+
+  background-color: var(--cblack);
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--cgray);
+  border-radius: 5px;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100dvh;
+  width: 70%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  gap: .7rem;
+  padding: 2rem 0;
+}
+
+.block {
+  background-color: var(--cdarkblack);
+  color: var(--cwhite);
+  padding: 1.7rem;
+  width: calc(95% - 3.4rem);
+}
