@@ -15,7 +15,19 @@ export default function App() {
       tags: ["tag 1", "tag 2"],
       desc: "gfbnasjugnais jausbgfjausngikasnmtg giasngiasgmdisgnsi gndsj gndsign disngkisdn gkdnsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
       img: ""
-    }
+    },
+    {
+      name: "Project 2",
+      tags: ["tag 1", "tag 2", "tag 3", "tag 4"],
+      desc: "tyry gfbnasjugnais jausbgfjausngikasnhdfjs hndfkjhn tgfdaesg.",
+      img: ""
+    },
+    {
+      name: "Project 3",
+      tags: ["tag 1"],
+      desc: "fas fasgfbnasjugnais jausbgfjfasfnas junfasinsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
+      img: ""
+    },
   ]
 
   const careerList = [
@@ -58,11 +70,13 @@ export default function App() {
           <div className='project-img'>
             <img src={obj.img}/>
           </div>
-          <h2 className='project-title'>{obj.name}</h2>
-          <div className='tags'>
-            {obj.tags.map(tag=>{
-              return <div key={Math.random()}>{tag}</div>
-            })}
+          <div className="project-top">
+            <h2 className='project-title'>{obj.name}</h2>
+            <div className='tags'>
+              {obj.tags.map(tag=>{
+                return <div key={Math.random()}>{tag}</div>
+              })}
+            </div>
           </div>
           <p className='project-desc'>{obj.desc}</p>
         </section>
