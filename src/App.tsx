@@ -45,20 +45,26 @@ export default function App() {
   ]
 
   const UserTop = () => {
-    return <section className='block'>
-      <section className="block-content">
-        <div className='user-image'>
-          <img />
-        </div>
-        <div>
-          <h1>Nahuel Ibarra</h1>
-          <p>Front End Developer</p>
-        </div>
-      </section>
-    </section>
+    return <div className="top-block fade-in">
+        <section className='block'>
+          <section className="block-content">
+            <div>
+              <h1>Nahuel Ibarra</h1>
+              <p>Front End Developer</p>
+            </div>
+          </section>
+        </section>
+        <section className='block'>
+          <section className="block-content">
+            <div className='user-image'>
+              <img />
+            </div>
+          </section>
+        </section>
+      </div>
   }
   const TechBlock = () => {
-    return <section className="block">
+    return <section className="block fade-in">
       <section className="block-content">
         <img src='' alt='react' />
         <img src='' alt='typescript' />
@@ -69,7 +75,7 @@ export default function App() {
     </section>
   }
   const ProjectsListBlock = () => {
-    return <section className="block">
+    return <section className="block fade-in">
       <section className="block-content">
         {ProjectsList.map(obj => {
           return <section className='project-section' key={Math.random()}>

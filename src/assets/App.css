@@ -11,7 +11,19 @@ body {
   --cwhitesec: #A9B3BE;
   --cwhite: #FBFFF1;
 
-  background-color: var(--cblack);
+  --s: 50px;
+  --c: #191b22;
+  --_s: calc(2*var(--s)) calc(2*var(--s));
+  --_g: 35.36% 35.36% at;
+  --_c: #0000 66%, #20222a 68% 70%, #0000 72%;
+  background:
+    radial-gradient(var(--_g) 100% 25%, var(--_c)) var(--s) var(--s)/var(--_s),
+    radial-gradient(var(--_g) 0 75%, var(--_c)) var(--s) var(--s)/var(--_s),
+    radial-gradient(var(--_g) 100% 25%, var(--_c)) 0 0/var(--_s),
+    radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0/var(--_s),
+    repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0/var(--_s),
+    radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+  background-attachment:fixed;
   overflow: hidden;
 }
 
@@ -19,6 +31,9 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.d-flex {
+  display: flex;
+}
 
 ::-webkit-scrollbar {
   display: none;
@@ -34,26 +49,30 @@ main {
 .list {
   max-height: calc(100dvh - 4rem);
 
-  width: 70%;
+  width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 2rem 0;
+}
+
+.list > * {
+  width: calc(75% - 3.4rem);
+  margin: auto;
+  top: 2rem;
+  transition: top 500ms ease-out, opacity 300ms;
+  opacity: 0;
 }
 
 .block {
   background-color: var(--cdarkgray);
   color: var(--cwhite);
   padding: 2px;
-  width: calc(95% - 3.4rem);
   border-radius: 10px;
   position: relative;
   overflow: hidden;
-  margin: auto;
   margin-bottom: 1.5rem;
-  opacity: 0;
-  top: 2rem;
-  transition: top 500ms ease-out, opacity 300ms;
 }
+
 .block::before {
   content: "";
   background: linear-gradient(180deg, var(--cwhite) 10%, var(--cblue) 50%, transparent);
@@ -65,14 +84,17 @@ main {
   transform-origin: bottom right;
   animation: rotate 6s infinite linear;
 }
+
 @keyframes rotate {
   from {
     rotate: 0deg;
   }
+
   to {
     rotate: 360deg;
   }
 }
+
 .block:last-child {
   margin-bottom: 5rem;
 }
@@ -84,14 +106,25 @@ main {
   background-color: var(--cdarkblack);
   color: var(--cwhite);
   padding: 1.7rem;
+  height: calc(100% - 3.4rem);
+}
+
+/**/
+
+.top-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-image{
+  height: 50dvh;
+  width: 100%;
 }
 
 
 /**/
 
-.project-section{
-
-}
+.project-section {}
 
 .project-title {
   margin: 0;
@@ -106,18 +139,19 @@ main {
 .project-desc {
   padding-left: 1rem;
   position: relative;
-  color:var(--cwhitesec);
+  color: var(--cwhitesec);
 }
 
 .project-desc::after {
   content: "";
 }
 
-.tags{
+.tags {
   display: flex;
   gap: 0.3rem;
 }
-.tags > * {
+
+.tags>* {
   border: 2px solid var(--cgray);
   background-color: transparent;
   color: var(--cwhitesec);
