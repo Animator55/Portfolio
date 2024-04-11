@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCss3Alt, faGithub, faHtml5, faLinkedin, faPhp, faReact, faSquareJs } from "@fortawesome/free-brands-svg-icons"
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { faUser } from "@fortawesome/free-regular-svg-icons"
-import { faCode, faList } from "@fortawesome/free-solid-svg-icons"
+import { faArrowUp, faBars, faCode, faList } from "@fortawesome/free-solid-svg-icons"
 
 type projectType = {
   name: string
@@ -51,29 +51,31 @@ export default function App() {
 
   const SideBar = ()=>{
     return <section className="side-bar">
-      <button className="side-button">
-        <FontAwesomeIcon icon={faUser as IconProp}/>
-      </button>
-      <button className="side-button">
-        <FontAwesomeIcon icon={faUser as IconProp}/>
-      </button>
-      <button className="side-button">
-        <FontAwesomeIcon icon={faCode as IconProp}/>
-      </button>
-      <button className="side-button">
-        <FontAwesomeIcon icon={faList as IconProp}/>
-      </button>
-      <button className="side-button">
-        <FontAwesomeIcon icon={faUser as IconProp}/>
-      </button>
-      <button className="side-button">
-        <FontAwesomeIcon icon={faUser as IconProp}/>
+      <div className="button-list">
+        <a href="#top" className="side-button active">
+          <FontAwesomeIcon icon={faUser as IconProp}/>
+        </a>
+        <a href="#tech" className="side-button">
+          <FontAwesomeIcon icon={faCode as IconProp}/>
+        </a>
+        <a href="#project" className="side-button">
+          <FontAwesomeIcon icon={faList as IconProp}/>
+        </a>
+        <a href="#career" className="side-button">
+          <FontAwesomeIcon icon={faUser as IconProp}/>
+        </a>
+        <a href="#about" className="side-button">
+          <FontAwesomeIcon icon={faUser as IconProp}/>
+        </a>
+      </div>
+      <button className="side-expand">
+        <FontAwesomeIcon icon={faBars as IconProp}/>
       </button>
     </section>
   }
 
   const UserTop = () => {
-    return <div className="top-block fade-in">
+    return <div id="user"className="top-block fade-in">
         <section>
           <div>
             <h1>Nahuel Ibarra</h1>
@@ -86,27 +88,27 @@ export default function App() {
     </div>
   }
   const ContactBlock = () => {
-    return <section className='contact fade-in'>
+    return <section id="contact" className='contact fade-in'>
         <button className='contact-button'><FontAwesomeIcon icon={faGithub as IconProp} /> GitHub</button>
         <button className='contact-button'><FontAwesomeIcon icon={faLinkedin as IconProp} />LinkedIn</button>
     </section>
   }
   const TechBlock = () => {
-    return <section className="tech block">
+    return <section id="tech" className="tech block">
       <section className="block-content">
         <h3>Technologies</h3>
         <div className="icon-list">
           <FontAwesomeIcon icon={faHtml5 as IconProp} />
-          <FontAwesomeIcon icon={faReact as IconProp} />
-          <FontAwesomeIcon icon={faSquareJs as IconProp} />
-          <FontAwesomeIcon icon={faPhp as IconProp} />
           <FontAwesomeIcon icon={faCss3Alt as IconProp} />
+          <FontAwesomeIcon icon={faSquareJs as IconProp} />
+          <FontAwesomeIcon icon={faReact as IconProp} />
+          <FontAwesomeIcon icon={faPhp as IconProp} />
         </div>
       </section>
     </section>
   }
   const ProjectsListBlock = () => {
-    return <section className="block">
+    return <section id="project" className="block">
       <section className="block-content">
         {ProjectsList.map(obj => {
           return <section className='project-section' key={Math.random()}>
@@ -128,7 +130,7 @@ export default function App() {
     </section>
   }
   const CareerBlock = () => {
-    return <section className="block">
+    return <section id="career" className="block">
       <section className="block-content">
         {careerList.map(obj => {
           return <section className='career-section' key={Math.random()}>
@@ -142,7 +144,7 @@ export default function App() {
   }
 
   const AboutMeBlock = () => {
-    return <section className='block'>
+    return <section id="about" className='block'>
       <section className="block-content">
         <h1>About Me</h1>
         <p>fidnaesgkjdnskgm dokjsgn dfsngkjidsngkj hdskljbhnxdfkjs gndmks gklxdsnvgklb dnsmjvgb xdzjbnkjds gmjdsklvg dskj gmkldfnbkjdrnfjg ndkjsfj kdasjvgndkshfjdb dkjsnb vjds gjdmskgbjds gjdnsgkbdesgkji bdnfsjgh dfkskbhldfjkig ndrsoghdmsf hdfsjmg kldsmgdsmgk.</p>
@@ -156,12 +158,14 @@ export default function App() {
 
   const ScrollHandler = () => {
     let blocks = document.querySelectorAll(".block")
+    let buttons = document.querySelectorAll(".side-button")
 
     for (let i = 0; i < blocks.length; i++) {
       let windowHeight = window.innerHeight
       let revealTop = blocks[i].getBoundingClientRect().top
       let offset = 100
 
+      buttons[i+1].classList.toggle("active", revealTop < windowHeight - (offset + 200))
       blocks[i].classList.toggle("fade-in", revealTop < windowHeight - offset)
     }
   }
@@ -173,7 +177,7 @@ export default function App() {
 
   return <main>
     <SideBar/>
-    <div className="back-1"></div>
+    <div id="top" className="back-1"></div>
     <section className="list">
       <UserTop />
       <ContactBlock />
