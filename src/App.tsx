@@ -1,5 +1,10 @@
 import React from "react"
 import "./assets/App.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCss3Alt, faGithub, faHtml5, faLinkedin, faPhp, faReact, faSquareJs } from "@fortawesome/free-brands-svg-icons"
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
+import { faUser } from "@fortawesome/free-regular-svg-icons"
+import { faCode, faList } from "@fortawesome/free-solid-svg-icons"
 
 type projectType = {
   name: string
@@ -44,38 +49,64 @@ export default function App() {
     },
   ]
 
+  const SideBar = ()=>{
+    return <section className="side-bar">
+      <button className="side-button">
+        <FontAwesomeIcon icon={faUser as IconProp}/>
+      </button>
+      <button className="side-button">
+        <FontAwesomeIcon icon={faUser as IconProp}/>
+      </button>
+      <button className="side-button">
+        <FontAwesomeIcon icon={faCode as IconProp}/>
+      </button>
+      <button className="side-button">
+        <FontAwesomeIcon icon={faList as IconProp}/>
+      </button>
+      <button className="side-button">
+        <FontAwesomeIcon icon={faUser as IconProp}/>
+      </button>
+      <button className="side-button">
+        <FontAwesomeIcon icon={faUser as IconProp}/>
+      </button>
+    </section>
+  }
+
   const UserTop = () => {
     return <div className="top-block fade-in">
-        <section className='block'>
-          <section className="block-content">
-            <div>
-              <h1>Nahuel Ibarra</h1>
-              <p>Front End Developer</p>
-            </div>
-          </section>
+        <section>
+          <div>
+            <h1>Nahuel Ibarra</h1>
+            <p>Front End Developer</p>
+          </div>
         </section>
-        <section className='block'>
-          <section className="block-content">
-            <div className='user-image'>
-              <img />
-            </div>
-          </section>
-        </section>
-      </div>
+        <div className='user-image'>
+          <img />
+        </div>
+    </div>
+  }
+  const ContactBlock = () => {
+    return <section className='contact fade-in'>
+        <button className='contact-button'><FontAwesomeIcon icon={faGithub as IconProp} /> GitHub</button>
+        <button className='contact-button'><FontAwesomeIcon icon={faLinkedin as IconProp} />LinkedIn</button>
+    </section>
   }
   const TechBlock = () => {
-    return <section className="block fade-in">
+    return <section className="tech block">
       <section className="block-content">
-        <img src='' alt='react' />
-        <img src='' alt='typescript' />
-        <img src='' alt='html' />
-        <img src='' alt='css' />
-        <img src='' alt='php' />
+        <h3>Technologies</h3>
+        <div className="icon-list">
+          <FontAwesomeIcon icon={faHtml5 as IconProp} />
+          <FontAwesomeIcon icon={faReact as IconProp} />
+          <FontAwesomeIcon icon={faSquareJs as IconProp} />
+          <FontAwesomeIcon icon={faPhp as IconProp} />
+          <FontAwesomeIcon icon={faCss3Alt as IconProp} />
+        </div>
       </section>
     </section>
   }
   const ProjectsListBlock = () => {
-    return <section className="block fade-in">
+    return <section className="block">
       <section className="block-content">
         {ProjectsList.map(obj => {
           return <section className='project-section' key={Math.random()}>
@@ -119,43 +150,39 @@ export default function App() {
     </section>
   }
 
-  const ContactBlock = () => {
-    return <section className='block'>
-      <section className="block-content">
-        <button className='contact-button'>GitHub</button>
-        <button className='contact-button'>LinkedIn</button>
-      </section>
-    </section>
-  }
 
 
   /////
 
-  const ScrollHandler = ()=>{
+  const ScrollHandler = () => {
     let blocks = document.querySelectorAll(".block")
 
-    for(let i=0; i<blocks.length; i++) {
+    for (let i = 0; i < blocks.length; i++) {
       let windowHeight = window.innerHeight
       let revealTop = blocks[i].getBoundingClientRect().top
-      let offset = 150
+      let offset = 100
 
       blocks[i].classList.toggle("fade-in", revealTop < windowHeight - offset)
     }
   }
 
-  React.useEffect(()=>{
-    let list = document.querySelector(".list")
+  React.useEffect(() => {
+    let list = document.querySelector("main")
     list?.addEventListener("scroll", ScrollHandler)
   })
 
   return <main>
+    <SideBar/>
+    <div className="back-1"></div>
     <section className="list">
       <UserTop />
+      <ContactBlock />
+    </section>
+    <section className="list">
       <TechBlock />
       <ProjectsListBlock />
       <CareerBlock />
       <AboutMeBlock />
-      <ContactBlock />
     </section>
   </main>
 }
