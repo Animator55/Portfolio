@@ -107,6 +107,39 @@ export default function App() {
       </section>
     </section>
   }
+  const NEWProjectsListBlock = () => {
+    return <section id="project" className="projects-section fade-in">
+      <h1>Projects</h1>
+
+      <section className="show-project">
+        <div className="carrousel"></div>
+        <div className="project-desc">
+          <h4>{ProjectsList[0].name}</h4>
+          <div className='tags'>
+            {ProjectsList[0].tags.map(tag => {
+              return <div key={Math.random()}>{tag}</div>
+            })}
+          </div>
+          <div>tech circle</div>
+          <p>{ProjectsList[0].desc}</p>
+        </div>
+      </section>
+
+      <section className="projects-grid block-content">
+        {ProjectsList.map(el=>{
+          return <div className="project-item">
+            <div className="item-img"></div>
+            <h2>{el.name}</h2>
+            <div className='tags'>
+              {el.tags.map(tag => {
+                return <div key={Math.random()}>{tag}</div>
+              })}
+            </div>
+          </div>
+        })}
+      </section>
+    </section>
+  }
   const ProjectsListBlock = () => {
     return <section id="project" className="block">
       <section className="block-content">
@@ -184,7 +217,7 @@ export default function App() {
     </section>
     <section className="list">
       <TechBlock />
-      <ProjectsListBlock />
+      <NEWProjectsListBlock />
       <CareerBlock />
       <AboutMeBlock />
     </section>
