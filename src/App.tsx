@@ -1,10 +1,10 @@
 import React from "react"
 import "./assets/App.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCss3Alt, faGithub, faHtml5, faLinkedin, faPhp, faReact, faSquareJs } from "@fortawesome/free-brands-svg-icons"
+import { faCss3Alt, faFontAwesome, faGithub, faHtml5, faLinkedin, faPhp, faReact, faSquareJs } from "@fortawesome/free-brands-svg-icons"
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
-import { faUser } from "@fortawesome/free-regular-svg-icons"
-import { faArrowUp, faBars, faCode, faList } from "@fortawesome/free-solid-svg-icons"
+import { faImage, faUser } from "@fortawesome/free-regular-svg-icons"
+import { faArrowUp, faBars, faCode, faGear, faLaptopCode, faList, faTags } from "@fortawesome/free-solid-svg-icons"
 
 type projectType = {
   name: string
@@ -125,7 +125,7 @@ export default function App() {
         </div>
       </section>
 
-      <section className="projects-grid block-content">
+      <section className="projects-grid">
         {ProjectsList.map(el=>{
           return <div className="project-item">
             <div className="item-img"></div>
@@ -215,6 +215,14 @@ export default function App() {
       <UserTop />
       <ContactBlock />
     </section>
+    <div className="icons-background">
+      <FontAwesomeIcon icon={faImage as IconProp}/>
+      <FontAwesomeIcon icon={faGear as IconProp}/>
+      <FontAwesomeIcon icon={faCode as IconProp}/>
+      <FontAwesomeIcon icon={faLaptopCode as IconProp}/>
+      <FontAwesomeIcon icon={faTags as IconProp}/>
+      <FontAwesomeIcon icon={faFontAwesome as IconProp}/>
+    </div>
     <section className="list">
       <TechBlock />
       <NEWProjectsListBlock />

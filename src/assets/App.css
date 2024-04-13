@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  --cbackground: #b9d2ff;
   --cdarkblack: #292430;
   --cblack: #37323E;
   --cdarkgray: #3C3744;
@@ -16,7 +17,7 @@ body {
   --_s: calc(2*var(--s)) calc(2*var(--s));
   --_g: 35.36% 35.36% at;
   --_c: #0000 66%, #20222a 68% 70%, #0000 72%;
-  background-color: var(--clight);
+  background-color: var(--cbackground);
 }
 
 * {
@@ -33,7 +34,7 @@ body {
 
 main {
   width: 100%;
-  max-height: calc(100dvh );
+  max-height: calc(100dvh);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,7 +50,7 @@ main {
   flex-direction: column;
 }
 
-.list > * {
+.list>* {
   margin: auto;
   top: -2rem;
   transition: top 500ms ease-out, opacity 300ms;
@@ -60,7 +61,6 @@ main {
 /**/
 
 .back-1 {
-  content: "";
   position: absolute;
   width: 100%;
   height: 130vh;
@@ -73,16 +73,52 @@ main {
     radial-gradient(var(--_g) 0 75%, var(--_c)) 0 0/var(--_s),
     repeating-conic-gradient(var(--c) 0 25%, #0000 0 50%) 0 0/var(--_s),
     radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
-  background-attachment:fixed;
+  background-attachment: fixed;
   overflow: hidden;
 }
+
 .back-1::after {
   content: "";
   position: absolute;
   inset: 0;
   /* MANAGE THE RANGE OF GRADIENT BELOW OF 30% THE HEIGHT IS 130vh */
-  background: linear-gradient(180deg, transparent 67%, var(--clight) 67% 69%, transparent 69% 72%, var(--clight) 72% 76%, transparent 76% 82%, var(--clight) 82% 89%, transparent 89% 98%, var(--clight) 98% 100%);
+  background: linear-gradient(180deg, transparent 87%, var(--cbackground) 87% calc(87% + 0.1%), transparent calc(87% + 0.1%) calc(89% - 0.2%), var(--cbackground) calc(89% - 0.2%) calc(89% + 0.3%), transparent calc(89% + 0.3%) calc(91% - 0.4%), var(--cbackground) calc(91% - 0.4%) calc(91% + 0.5%), transparent calc(91% + 0.5%) calc(93% - 0.6%), var(--cbackground) calc(93% - 0.6%) calc(93% + 0.7%), transparent calc(93% + 0.7%) calc(95% - 0.8%), var(--cbackground) calc(95% - 0.8%) calc(95% + 0.9%), transparent calc(95% + 0.9%) calc(97% - 0.9%), var(--cbackground) calc(97% - 1.2%) calc(97% + 1.2%), transparent calc(97% + 1.2%) calc(99% - 0.6%), var(--cbackground) calc(99% - 0.6%) 100%);
 }
+
+.icons-background {
+  position: absolute;
+  z-index: -1;
+  color: var(--cwhite);
+  opacity: 0.5;
+  top: 130vh;
+  width: 100%;
+  height: 100vh;
+}
+
+.icons-background > * {
+  position: absolute;
+}
+.icons-background > *:nth-child(1) {
+  top: 10%;
+  left: 2%;
+  rotate: 15deg;
+  scale: 8;
+}
+.icons-background > *:nth-child(2) {
+  right: 9%;
+  scale: 6;
+  rotate: 10deg;
+  top: 17%;
+}
+.icons-background > *:nth-child(3) {
+}
+.icons-background > *:nth-child(4) {
+}
+.icons-background > *:nth-child(5) {
+}
+.icons-background > *:nth-child(6) {
+}
+
 
 .block {
   background-color: var(--cdarkgray);
@@ -117,7 +153,7 @@ main {
   }
 }
 
-.list:last-child > *:last-child {
+.list:last-child>*:last-child {
   margin-bottom: 7rem;
 }
 
@@ -128,7 +164,7 @@ main {
   background-color: var(--cdarkblack);
   color: var(--cwhite);
   padding: 1rem 5%;
-  height:90%;
+  height: 90%;
 }
 
 /**/
@@ -174,6 +210,7 @@ main {
   scale: 1.6;
   transition: scale 100ms, color 100ms;
 }
+
 .side-button.active:has(+ .active) {
   color: var(--cwhitesec);
   scale: 1;
@@ -194,14 +231,14 @@ main {
   width: 90%;
 }
 
-.user-image{
+.user-image {
   height: 65dvh;
   width: 50%;
   background-color: var(--cgray);
   border-radius: 5px;
 }
 
-/***/ 
+/***/
 
 
 .contact {
@@ -243,7 +280,7 @@ main {
   flex-wrap: wrap;
 }
 
-.icon-list > * {
+.icon-list>* {
   font-size: 2.4rem;
 }
 
@@ -257,24 +294,28 @@ main {
   margin-top: 2rem;
 }
 
-.projects-section > h1 {
+.projects-section>h1 {
   font-size: 2.5rem;
 }
 
-.project-section {}
-
-.show-project{
+.show-project {
   display: flex;
-  gap: 0.7rem
+  gap: 0.7rem;
+  padding: 1.4rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--cwhite);
+  background: #00000013;
+  backdrop-filter: blur(2px);
 }
 
 .carrousel {
   min-width: 60%;
+  
   background-color: var(--c);
 }
 
 .projects-grid {
-  display: grid; 
+  display: grid;
   grid-template-columns: 50% 50%;
 }
 
@@ -333,9 +374,10 @@ main {
     width: 90%;
   }
 
-  .top-block{
+  .top-block {
     flex-direction: column-reverse;
   }
+
   .user-image {
     width: 100%;
     height: 50vh;
@@ -344,6 +386,9 @@ main {
   .project-top {
     gap: 0.5rem;
     align-items: start;
+    flex-direction: column;
+  }
+  .show-project {
     flex-direction: column;
   }
 }
