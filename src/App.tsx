@@ -51,7 +51,7 @@ export default function App() {
 
   const SideBar = ()=>{
     return <section className="side-bar">
-      <div className="button-list">
+      <div className="button-list active">
         <a href="#top" className="side-button active">
           <FontAwesomeIcon icon={faUser as IconProp}/>
         </a>
@@ -68,9 +68,6 @@ export default function App() {
           <FontAwesomeIcon icon={faUser as IconProp}/>
         </a>
       </div>
-      <button className="side-expand">
-        <FontAwesomeIcon icon={faBars as IconProp}/>
-      </button>
     </section>
   }
 
@@ -94,7 +91,7 @@ export default function App() {
     </section>
   }
   const TechBlock = () => {
-    return <section id="tech" className="tech block">
+    return <section id="tech" className="tech block fading">
       <section className="block-content">
         <h3>Technologies</h3>
         <div className="icon-list">
@@ -108,7 +105,7 @@ export default function App() {
     </section>
   }
   const NEWProjectsListBlock = () => {
-    return <section id="project" className="projects-section fade-in">
+    return <section id="project" className="projects-section fade-in fading">
       <h1>Projects</h1>
 
       <section className="show-project">
@@ -121,7 +118,7 @@ export default function App() {
             })}
           </div>
           <div>tech circle</div>
-          <p>{ProjectsList[0].desc}</p>
+          {/* <p>{ProjectsList[0].desc}</p> */}
         </div>
       </section>
 
@@ -129,7 +126,7 @@ export default function App() {
         {ProjectsList.map(el=>{
           return <div className="project-item">
             <div className="item-img"></div>
-            <h2>{el.name}</h2>
+            <h2 className="project-title">{el.name}</h2>
             <div className='tags'>
               {el.tags.map(tag => {
                 return <div key={Math.random()}>{tag}</div>
@@ -140,30 +137,8 @@ export default function App() {
       </section>
     </section>
   }
-  const ProjectsListBlock = () => {
-    return <section id="project" className="block">
-      <section className="block-content">
-        {ProjectsList.map(obj => {
-          return <section className='project-section' key={Math.random()}>
-            <div className='project-img'>
-              <img src={obj.img} />
-            </div>
-            <div className="project-top">
-              <h2 className='project-title'>{obj.name}</h2>
-              <div className='tags'>
-                {obj.tags.map(tag => {
-                  return <div key={Math.random()}>{tag}</div>
-                })}
-              </div>
-            </div>
-            <p className='project-desc'>{obj.desc}</p>
-          </section>
-        })}
-      </section>
-    </section>
-  }
   const CareerBlock = () => {
-    return <section id="career" className="block">
+    return <section id="career" className="block fading">
       <section className="block-content">
         {careerList.map(obj => {
           return <section className='career-section' key={Math.random()}>
@@ -177,7 +152,7 @@ export default function App() {
   }
 
   const AboutMeBlock = () => {
-    return <section id="about" className='block'>
+    return <section id="about" className='block fading'>
       <section className="block-content">
         <h1>About Me</h1>
         <p>fidnaesgkjdnskgm dokjsgn dfsngkjidsngkj hdskljbhnxdfkjs gndmks gklxdsnvgklb dnsmjvgb xdzjbnkjds gmjdsklvg dskj gmkldfnbkjdrnfjg ndkjsfj kdasjvgndkshfjdb dkjsnb vjds gjdmskgbjds gjdnsgkbdesgkji bdnfsjgh dfkskbhldfjkig ndrsoghdmsf hdfsjmg kldsmgdsmgk.</p>
@@ -189,8 +164,8 @@ export default function App() {
 
   /////
 
-  const ScrollHandler = () => {
-    let blocks = document.querySelectorAll(".block")
+  const ScrollHandler = (e: Event) => {
+    let blocks = document.querySelectorAll(".fading")
     let buttons = document.querySelectorAll(".side-button")
 
     for (let i = 0; i < blocks.length; i++) {
@@ -208,7 +183,11 @@ export default function App() {
     list?.addEventListener("scroll", ScrollHandler)
   })
 
-  return <main>
+  return <main onWheel={(e)=>{
+      let navBar = document.querySelector(".side-bar")
+      let firstChild = navBar?.firstChild as HTMLDivElement
+      if(firstChild) firstChild.classList.toggle("active", e.deltaY > 0)
+    }}>
     <SideBar/>
     <div id="top" className="back-1"></div>
     <section className="list">
@@ -221,11 +200,13 @@ export default function App() {
       <FontAwesomeIcon icon={faCode as IconProp}/>
       <FontAwesomeIcon icon={faLaptopCode as IconProp}/>
       <FontAwesomeIcon icon={faTags as IconProp}/>
-      <FontAwesomeIcon icon={faFontAwesome as IconProp}/>
     </div>
     <section className="list">
       <TechBlock />
       <NEWProjectsListBlock />
+    </section>
+    <section className="list">
+    <div className="back-2"></div>
       <CareerBlock />
       <AboutMeBlock />
     </section>
