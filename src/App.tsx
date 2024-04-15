@@ -5,36 +5,10 @@ import { faCss3Alt, faFontAwesome, faGithub, faHtml5, faLinkedin, faPhp, faReact
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { faImage, faUser } from "@fortawesome/free-regular-svg-icons"
 import { faArrowUp, faBars, faCode, faGear, faLaptopCode, faList, faTags } from "@fortawesome/free-solid-svg-icons"
+import ProjectsCarrousel from "./components/ProjectsCarrousel"
 
-type projectType = {
-  name: string
-  tags: string[]
-  desc: string
-  img: string
-}
 
 export default function App() {
-
-  const ProjectsList: projectType[] = [
-    {
-      name: "Project 1",
-      tags: ["tag 1", "tag 2"],
-      desc: "gfbnasjugnais jausbgfjausngikasnmtg giasngiasgmdisgnsi gndsj gndsign disngkisdn gkdnsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
-      img: ""
-    },
-    {
-      name: "Project 2",
-      tags: ["tag 1", "tag 2", "tag 3", "tag 4"],
-      desc: "tyry gfbnasjugnais jausbgfjausngikasnhdfjs hndfkjhn tgfdaesg.",
-      img: ""
-    },
-    {
-      name: "Project 3",
-      tags: ["tag 1"],
-      desc: "fas fasgfbnasjugnais jausbgfjfasfnas junfasinsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
-      img: ""
-    },
-  ]
 
   const careerList = [
     {
@@ -93,7 +67,7 @@ export default function App() {
   const TechBlock = () => {
     return <section id="tech" className="tech block fading">
       <section className="block-content">
-        <h3>Technologies</h3>
+      <h3 style={{textAlign: "center"}}>Projects</h3>
         <div className="icon-list">
           <FontAwesomeIcon icon={faHtml5 as IconProp} />
           <FontAwesomeIcon icon={faCss3Alt as IconProp} />
@@ -101,39 +75,6 @@ export default function App() {
           <FontAwesomeIcon icon={faReact as IconProp} />
           <FontAwesomeIcon icon={faPhp as IconProp} />
         </div>
-      </section>
-    </section>
-  }
-  const NEWProjectsListBlock = () => {
-    return <section id="project" className="projects-section fade-in fading">
-      <h1>Projects</h1>
-
-      <section className="show-project">
-        <div className="carrousel"></div>
-        <div className="project-desc">
-          <h4>{ProjectsList[0].name}</h4>
-          <div className='tags'>
-            {ProjectsList[0].tags.map(tag => {
-              return <div key={Math.random()}>{tag}</div>
-            })}
-          </div>
-          <div>tech circle</div>
-          {/* <p>{ProjectsList[0].desc}</p> */}
-        </div>
-      </section>
-
-      <section className="projects-grid">
-        {ProjectsList.map(el=>{
-          return <div className="project-item">
-            <div className="item-img"></div>
-            <h2 className="project-title">{el.name}</h2>
-            <div className='tags'>
-              {el.tags.map(tag => {
-                return <div key={Math.random()}>{tag}</div>
-              })}
-            </div>
-          </div>
-        })}
       </section>
     </section>
   }
@@ -203,7 +144,7 @@ export default function App() {
     </div>
     <section className="list">
       <TechBlock />
-      <NEWProjectsListBlock />
+      <ProjectsCarrousel />
     </section>
     <section className="list">
     <div className="back-2"></div>
