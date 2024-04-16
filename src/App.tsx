@@ -130,7 +130,7 @@ export default function App() {
       if(firstChild) firstChild.classList.toggle("active", e.deltaY > 0)
     }}>
     <SideBar/>
-    <div id="top" className="back-1"></div>
+    {/* <div id="top" className="back-1"></div> */}
     <section className="list">
       <UserTop />
       <ContactBlock />
@@ -144,10 +144,10 @@ export default function App() {
     </div>
     <section className="list">
       <TechBlock />
-      <ProjectsCarrousel />
+      {/* <ProjectsCarrousel /> */}
     </section>
     <section className="list">
-    <div className="back-2"></div>
+    {/* <div className="back-2"></div> */}
       <CareerBlock />
       <AboutMeBlock />
     </section>
