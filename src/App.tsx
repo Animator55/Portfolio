@@ -6,6 +6,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { faImage, faUser } from "@fortawesome/free-regular-svg-icons"
 import { faArrowUp, faBars, faCode, faGear, faLaptopCode, faList, faTags } from "@fortawesome/free-solid-svg-icons"
 import ProjectsCarrousel from "./components/ProjectsCarrousel"
+import ProjectsList from "./components/ProjectsList"
 
 
 export default function App() {
@@ -144,6 +145,7 @@ export default function App() {
     </div>
     <section className="list">
       <TechBlock />
+      <ProjectsList/>
       {/* <ProjectsCarrousel /> */}
     </section>
     <section className="list">

@@ -73,7 +73,7 @@ main {
 
 /**/
 
-.back-1, .back-2 {
+/* .back-1, .back-2 {
   position: absolute;
   width: 100%!important;
   height: 130vh;
@@ -93,12 +93,12 @@ main {
 
 .list:has(.back-2) {
   padding-top: 3rem;
-}
+} */
 
 .list:has(.top-block) {
   width: 90%;
 }
-
+/* 
 .back-2 {
   height: 104%;
 }
@@ -111,7 +111,7 @@ main {
 }
 .back-2::after {
   background: linear-gradient(0deg, transparent 87%, var(--cbackground) 87% calc(87% + 0.1%), transparent calc(87% + 0.1%) calc(89% - 0.2%), var(--cbackground) calc(89% - 0.2%) calc(89% + 0.3%), transparent calc(89% + 0.3%) calc(91% - 0.4%), var(--cbackground) calc(91% - 0.4%) calc(91% + 0.5%), transparent calc(91% + 0.5%) calc(93% - 0.6%), var(--cbackground) calc(93% - 0.6%) calc(93% + 0.7%), transparent calc(93% + 0.7%) calc(95% - 0.8%), var(--cbackground) calc(95% - 0.8%) calc(95% + 0.9%), transparent calc(95% + 0.9%) calc(97% - 0.9%), var(--cbackground) calc(97% - 1.2%) calc(97% + 1.2%), transparent calc(97% + 1.2%) calc(99% - 0.6%), var(--cbackground) calc(99% - 0.6%) 100%);
-}
+} */
 
 .icons-background {
   position: absolute;
@@ -506,6 +506,16 @@ main {
 .project-desc > * {
   position: relative;
   z-index: 1;
+}
+
+/**/
+
+.projects-list {
+
+}
+
+.projects-list > ul {
+  
 }
 
 .tags {
