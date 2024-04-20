@@ -363,17 +363,7 @@ main {
 /**/
 
 
-.blurry {
-  opacity: 0.7!important;
-  filter: blur(2px)!important;
-}
-
-.showy {
-  opacity: 1!important;
-  filter: none!important;
-  z-index: 2!important;
-}
-
+/* 
 .image {
   opacity: 0.4;
   position: absolute;
@@ -434,7 +424,7 @@ main {
 
 .image:not(.selected) > .project-desc {
   opacity: 0;
-}
+} */ 
 
 /***/
 

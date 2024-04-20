@@ -68,7 +68,7 @@ export default function App() {
   const TechBlock = () => {
     return <section id="tech" className="tech block fading">
       <section className="block-content">
-      <h3 style={{textAlign: "center"}}>Projects</h3>
+      <h3 style={{textAlign: "center"}}>Technologies</h3>
         <div className="icon-list">
           <FontAwesomeIcon icon={faHtml5 as IconProp} />
           <FontAwesomeIcon icon={faCss3Alt as IconProp} />
@@ -115,8 +115,8 @@ export default function App() {
       let revealTop = blocks[i].getBoundingClientRect().top
       let offset = 100
 
-      buttons[i+1].classList.toggle("active", revealTop < windowHeight - (offset + 200))
       blocks[i].classList.toggle("fade-in", revealTop < windowHeight - offset)
+      buttons[i+1].classList.toggle("active", revealTop < windowHeight - (offset + 200))
     }
   }
 
