@@ -76,11 +76,11 @@ export default function ProjectsList({ }: Props) {
                             {el.langs.map(lang => {
                                 return <div key={Math.random()}>
                                     <div style={{ backgroundColor: iconSelected[lang] }}></div>
-                                    <p>{lang}</p>
+                                    {selected === i && <p>{lang}</p>}
                                 </div>
                             })}
                         </div>
-                        <div>{el.desc}</div>
+                        {selected === i && <div>{el.desc}</div>}
                         <span><FontAwesomeIcon icon={faChevronDown as IconProp} /></span>
                     </li>
                 })}
