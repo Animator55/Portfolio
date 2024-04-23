@@ -34,6 +34,11 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
 .d-flex {
   display: flex;
 }
@@ -125,6 +130,7 @@ main {
 
 .icons-background > * {
   position: absolute;
+  filter: blur(1px);
 }
 .icons-background > *:nth-child(1) {
   top: 10%;
@@ -403,11 +409,105 @@ main {
 /**/
 
 .projects-list {
-
+  padding: 0 0.5rem;
 }
 
-.projects-list > ul {
-  
+.projects-list > li span {
+  margin-left: auto;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 300ms, scale 300ms;
+}
+
+.projects-list > li.selected span {
+  rotate: 180deg;
+}
+
+.projects-list > li:hover span {
+  scale: 1.3;
+  background-color: var(--cblack);
+}
+
+.projects-list > li .top::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--cwhite);
+}
+.projects-list > li > .top {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor:pointer;
+}
+
+.projects-list > li.selected > .top {
+  background: linear-gradient(0deg, var(--c), transparent);
+  border-color: var(--cblack);
+}
+
+.projects-list > li > .top:hover {
+  border-color: var(--cgray);
+}
+
+.projects-list .langs {
+  display: flex;
+  width: 100%;
+  gap: 0.7rem;
+}
+.projects-list .langs-min {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.projects-list .langs > div {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.projects-list .langs > div > div:first-child,
+.projects-list .langs-min > div > div:first-child {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+.projects-list .langs > div > :last-child {
+  margin: 0;
+}
+
+.projects-list > li > div:not(.top) {
+  margin: 0.5rem 0 0 3rem;
+  padding: 1.5rem 1.5rem;
+  background-color: var(--cblack);
+  border-radius: 5px;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.projects-list > li > div:not(.top)::before {
+  content: "";
+  height: 80%;
+  width: 0.2rem;
+  left: -1.6rem;
+  top: 10%;
+  background-color: var(--cwhitesec);
+  border-radius: 3px;
+  position: absolute;
+}
+.projects-list > li .desc {
+  color: var(--cwhitesec);
 }
 
 .tags {

@@ -55,7 +55,6 @@ const iconSelected: iconSelector = {
 export default function ProjectsList({ }: Props) {
     const [selected, setSelected] = React.useState(-1)
 
-
     return <section className='block fading'>
         <section className='block-content'>
             <h3>Projects</h3>
@@ -66,22 +65,33 @@ export default function ProjectsList({ }: Props) {
                         key={Math.random()}
                         onClick={() => { setSelected(selected !== i ? i : -1) }}
                     >
-                        <h4>{el.name}</h4>
-                        <div className='tags'>
-                            {el.tags.map(tag => {
-                                return <div key={Math.random()}>{tag}</div>
-                            })}
+                        <div className='top'>
+                            <h4>{el.name}</h4>
+                            <div className='tags'>
+                                {el.tags.map(tag => {
+                                    return <div key={Math.random()}>{tag}</div>
+                                })}
+                            </div>
+                            <div className='langs-min'>
+                                {el.langs.map(lang => {
+                                    return <div key={Math.random()}>
+                                        <div style={{ backgroundColor: iconSelected[lang] }}></div>
+                                    </div>
+                                })}
+                            </div>
+                            <span><FontAwesomeIcon icon={faChevronDown as IconProp} /></span>
                         </div>
-                        <div className='langs'>
-                            {el.langs.map(lang => {
-                                return <div key={Math.random()}>
-                                    <div style={{ backgroundColor: iconSelected[lang] }}></div>
-                                    {selected === i && <p>{lang}</p>}
-                                </div>
-                            })}
-                        </div>
-                        {selected === i && <div>{el.desc}</div>}
-                        <span><FontAwesomeIcon icon={faChevronDown as IconProp} /></span>
+                        {selected === i && <div className="hidden">
+                            <div className='langs'>
+                                {el.langs.map(lang => {
+                                    return <div key={Math.random()}>
+                                        <div style={{ backgroundColor: iconSelected[lang] }}></div>
+                                        <p>{lang}</p>
+                                    </div>
+                                })}
+                            </div>
+                            <div className='desc'>{el.desc}</div>
+                        </div>}
                     </li>
                 })}
             </ul>
