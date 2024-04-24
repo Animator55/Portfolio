@@ -8,7 +8,7 @@ body {
   --cdarkgray: #3C3744;
   --cgray: #57678B;
   --cblue: #7296D1;
-  --cgreen: #ffffff;
+  --cgreen: #59f778;
   --clight: #B4C5E4;
   --cwhitesec: #A9B3BE;
   --cwhite: #FBFFF1;
@@ -101,7 +101,7 @@ main {
 } */
 
 .list:has(.top-block) {
-  width: 90%;
+  width: 70%;
 }
 /* 
 .back-2 {
@@ -218,17 +218,19 @@ main {
   justify-content: space-around;
   left: 0;
   bottom: -3rem;
-  transition: bottom 500ms;
+  transition: bottom 200ms, opacity 100ms;
   padding-bottom: 0.5rem;
   width: 100%;
   background: linear-gradient(0deg, black, transparent);
   backdrop-filter: blur(1px);
   position: fixed;
   z-index: 4;
+  opacity: 0;
 }
 .button-list.active {
   bottom: 0rem;
-  transition: bottom 200ms;
+  opacity: 1;
+  transition: bottom 200ms, opacity 100ms;
 }
 /* 
 .side-expand {
@@ -255,7 +257,7 @@ main {
 
 .side-button.active {
   color: var(--cwhite);
-  scale: 1.6;
+  scale: 2.6;
   transition: scale 100ms, color 100ms;
 }
 
@@ -486,9 +488,9 @@ main {
   margin: 0;
 }
 
-.projects-list > li > div:not(.top) {
+.projects-list > li > .hidden {
   margin: 0.5rem 0 0 3rem;
-  padding: 1.5rem 1.5rem;
+  padding: 1.5rem 1.5rem 0.5rem;
   background-color: var(--cblack);
   border-radius: 5px;
   gap: 1rem;
@@ -496,7 +498,7 @@ main {
   flex-direction: column;
   position: relative;
 }
-.projects-list > li > div:not(.top)::before {
+.projects-list > li > .hidden::before {
   content: "";
   height: 80%;
   width: 0.2rem;
@@ -508,6 +510,24 @@ main {
 }
 .projects-list > li .desc {
   color: var(--cwhitesec);
+}
+
+.projects-list .buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.projects-list .buttons > * {
+  padding: 0.5rem 1.2rem;
+  background-color: var(--cgreen);
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bolder;
+  color: var(--c);
+  cursor: pointer;
+  border: none;
 }
 
 .tags {
@@ -540,7 +560,7 @@ main {
 
 @media (max-width:700px) {
 
-  .list>* {
+  .list>*,.list:has(.top-block) {
     width: 90%;
   }
 

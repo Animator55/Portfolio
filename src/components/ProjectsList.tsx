@@ -1,5 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUpRightFromSquare, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
@@ -91,6 +91,10 @@ export default function ProjectsList({ }: Props) {
                                 })}
                             </div>
                             <div className='desc'>{el.desc}</div>
+                            <div className="buttons">
+                                <button>GitHub</button>
+                                <button>Test</button>
+                            </div>
                         </div>}
                     </li>
                 })}
