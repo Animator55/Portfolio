@@ -63,9 +63,8 @@ export default function ProjectsList({ }: Props) {
                     return <li
                         className={selected === i ? "selected" : ""}
                         key={Math.random()}
-                        onClick={() => { setSelected(selected !== i ? i : -1) }}
                     >
-                        <div className='top'>
+                        <div className='top' onClick={() => { setSelected(selected !== i ? i : -1) }}>
                             <h4>{el.name}</h4>
                             <div className='tags'>
                                 {el.tags.map(tag => {
@@ -90,7 +89,11 @@ export default function ProjectsList({ }: Props) {
                                     </div>
                                 })}
                             </div>
-                            <div className='desc'>{el.desc}</div>
+                            <div className='desc' style={
+                                {   
+                                    width: el.desc.length+ "ch",
+                                    animation: `typing 500ms steps(${el.desc.length}), blink .1s step-end infinite alternate`}
+                            }>{el.desc}</div>
                             <div className="buttons">
                                 <button>GitHub</button>
                                 <button>Test</button>
