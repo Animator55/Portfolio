@@ -484,8 +484,44 @@ main {
   height: 0.5rem;
   border-radius: 50%;
 }
+
+.projects-list .langs > div > div:first-child {
+  opacity: 0;
+  position: relative;
+  left: -0.5rem;
+  animation: spawn-dot 300ms 0.3s ease-in forwards;
+}
+
+@keyframes spawn-dot {
+  from {
+    opacity: 0;
+    scale: 0;
+    left: -0.5rem;
+  }
+  to {
+    scale: 1;
+    left: 0;
+    opacity: 1;
+  }
+}
+
 .projects-list .langs > div > :last-child {
   margin: 0;
+  opacity: 0;
+  left: -0.7rem;
+  position: relative;
+  animation: spawn-text 400ms 0.85s ease-out forwards;
+}
+
+@keyframes spawn-text {
+  from {
+    left: -0.7rem;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
 }
 
 .projects-list > li > .hidden {
@@ -542,18 +578,25 @@ main {
 
 .projects-list > li .desc {
   color: var(--cwhitesec);
-  white-space: nowrap;
   overflow: hidden;
+  position: relative;
+}
+
+.projects-list > li .desc::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0%;
+  height: 100%;
+  border-left: 3px solid transparent;
+  background-color: var(--cblack);
+  animation: typing 1s steps(40) forwards;
 }
 @keyframes typing {
   from {
-    width: 0
-  }
-}
-    
-@keyframes blink {
-  50% {
-    border-color: transparent
+    width: 100%;
+    border-left: 3px solid var(--cwhitesec);
   }
 }
 

@@ -1,11 +1,10 @@
 import React from "react"
 import "./assets/App.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCss3Alt, faFontAwesome, faGithub, faHtml5, faLinkedin, faPhp, faReact, faSquareJs } from "@fortawesome/free-brands-svg-icons"
+import { faCss3Alt, faGithub, faHtml5, faLinkedin, faPhp, faReact, faSquareJs } from "@fortawesome/free-brands-svg-icons"
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { faImage, faUser } from "@fortawesome/free-regular-svg-icons"
-import { faArrowUp, faBars, faCode, faGear, faLaptopCode, faList, faTags } from "@fortawesome/free-solid-svg-icons"
-import ProjectsCarrousel from "./components/ProjectsCarrousel"
+import { faCode, faGear, faLaptopCode, faList, faTags } from "@fortawesome/free-solid-svg-icons"
 import ProjectsList from "./components/ProjectsList"
 
 
@@ -97,7 +96,7 @@ export default function App() {
     return <section id="about" className='block fading'>
       <section className="block-content">
         <h1>About Me</h1>
-        <p>fidnaesgkjdnskgm dokjsgn dfsngkjidsngkj hdskljbhnxdfkjs gndmks gklxdsnvgklb dnsmjvgb xdzjbnkjds gmjdsklvg dskj gmkldfnbkjdrnfjg ndkjsfj kdasjvgndkshfjdb dkjsnb vjds gjdmskgbjds gjdnsgkbdesgkji bdnfsjgh dfkskbhldfjkig ndrsoghdmsf hdfsjmg kldsmgdsmgk.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed impedit, iste repellendus ullam rerum laborum inventore ad excepturi porro molestiae, explicabo unde. Tempore quae fuga doloremque cumque quo aliquid consequatur.</p>
       </section>
     </section>
   }
@@ -106,7 +105,7 @@ export default function App() {
 
   /////
 
-  const ScrollHandler = (e: Event) => {
+  const ScrollHandler = () => {
     let blocks = document.querySelectorAll(".fading")
     let buttons = document.querySelectorAll(".side-button")
 

@@ -1,5 +1,5 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
-import { faArrowUpRightFromSquare, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
@@ -55,7 +55,7 @@ const iconSelected: iconSelector = {
 export default function ProjectsList({ }: Props) {
     const [selected, setSelected] = React.useState(-1)
 
-    return <section className='block fading'>
+    return <section className='block fading' id='project'>
         <section className='block-content'>
             <h3>Projects</h3>
             <ul className='projects-list'>
@@ -82,18 +82,14 @@ export default function ProjectsList({ }: Props) {
                         </div>
                         {selected === i && <div className="hidden">
                             <div className='langs'>
-                                {el.langs.map(lang => {
+                                {el.langs.map((lang, i) => {
                                     return <div key={Math.random()}>
-                                        <div style={{ backgroundColor: iconSelected[lang] }}></div>
-                                        <p>{lang}</p>
+                                        <div style={{ backgroundColor: iconSelected[lang], animationDelay:100*(i+1)+ "ms"}}></div>
+                                        <p style={{animationDelay:400*(i+1)+ "ms"}}>{lang}</p>
                                     </div>
                                 })}
                             </div>
-                            <div className='desc' style={
-                                {   
-                                    width: el.desc.length+ "ch",
-                                    animation: `typing 500ms steps(${el.desc.length}), blink .1s step-end infinite alternate`}
-                            }>{el.desc}</div>
+                            <div className='desc'>{el.desc}</div>
                             <div className="buttons">
                                 <button>GitHub</button>
                                 <button>Test</button>
