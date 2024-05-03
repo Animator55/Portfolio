@@ -6,22 +6,10 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { faImage, faUser } from "@fortawesome/free-regular-svg-icons"
 import { faCode, faGear, faLaptopCode, faList, faTags } from "@fortawesome/free-solid-svg-icons"
 import ProjectsList from "./components/ProjectsList"
+import CareerBlock from "./components/CarrerBlock"
 
 
 export default function App() {
-
-  const careerList = [
-    {
-      title: "Title 1",
-      period: "M/Y to M/Y",
-      desc: "ofnasdiofkmasf fosnafkimnasfkimjas fasnf kjasinfkjinasdfjdnsfjbdnsjf dsjfasdjf jas fjasjfjas fdasf djas nf asfas fasf as f."
-    },
-    {
-      title: "Title 2",
-      period: "M/Y to M/Y",
-      desc: "ofnasdiofkmasf fosnafkimnasfkimjas fasnf kjasinfkjinasdfjdnsfjbdnsjf dsjfasdjf jas fjasjfjas fdasf djas nf asfas fasf as f."
-    },
-  ]
 
   const SideBar = ()=>{
     return <section className="side-bar">
@@ -75,19 +63,6 @@ export default function App() {
           <FontAwesomeIcon icon={faReact as IconProp} />
           <FontAwesomeIcon icon={faPhp as IconProp} />
         </div>
-      </section>
-    </section>
-  }
-  const CareerBlock = () => {
-    return <section id="career" className="block fading">
-      <section className="block-content">
-        {careerList.map(obj => {
-          return <section className='career-section' key={Math.random()}>
-            <h2 className='career-title'>{obj.title}</h2>
-            <div className='career-period'>{obj.period}</div>
-            <p className='career-desc'>{obj.desc}</p>
-          </section>
-        })}
       </section>
     </section>
   }
