@@ -7,6 +7,7 @@ import { faImage, faUser } from "@fortawesome/free-regular-svg-icons"
 import { faCode, faGear, faLaptopCode, faList, faTags } from "@fortawesome/free-solid-svg-icons"
 import ProjectsList from "./components/ProjectsList"
 import CareerBlock from "./components/CarrerBlock"
+import AboutMeBlock from "./components/AboutBlock"
 
 
 export default function App() {
@@ -63,15 +64,6 @@ export default function App() {
           <FontAwesomeIcon icon={faReact as IconProp} />
           <FontAwesomeIcon icon={faPhp as IconProp} />
         </div>
-      </section>
-    </section>
-  }
-
-  const AboutMeBlock = () => {
-    return <section id="about" className='block fading'>
-      <section className="block-content">
-        <h1>About Me</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed impedit, iste repellendus ullam rerum laborum inventore ad excepturi porro molestiae, explicabo unde. Tempore quae fuga doloremque cumque quo aliquid consequatur.</p>
       </section>
     </section>
   }
