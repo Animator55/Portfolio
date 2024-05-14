@@ -1,13 +1,13 @@
 
 const careerList = [
     {
-      title: "Title 1",
-      period: "M/Y to M/Y",
+      title: "Freelance Software Developer",
+      period: "MAY 2023 to Present Day",
       desc: "ofnasdiofkmasf fosnafkimnasfkimjas fasnf kjasinfkjinasdfjdnsfjbdnsjf dsjfasdjf jas fjasjfjas fdasf djas nf asfas fasf as f."
     },
     {
-      title: "Title 2",
-      period: "M/Y to M/Y",
+      title: "Front End Developer",
+      period: "MAY 2022 to MAY 2023",
       desc: "ofnasdiofkmasf fosnafkimnasfkimjas fasnf kjasinfkjinasdfjdnsfjbdnsjf dsjfasdjf jas fjasjfjas fdasf djas nf asfas fasf as f."
     },
   ]

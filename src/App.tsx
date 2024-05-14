@@ -72,7 +72,7 @@ export default function App() {
 
   /////
 
-  const ScrollHandler = () => {
+  const ScrollHandler = (e: Event) => {
     let blocks = document.querySelectorAll(".fading")
     let buttons = document.querySelectorAll(".side-button")
 
@@ -84,6 +84,11 @@ export default function App() {
       blocks[i].classList.toggle("fade-in", revealTop < windowHeight - offset)
       buttons[i+1].classList.toggle("active", revealTop < windowHeight - (offset + 200))
     }
+
+    let icons = document.querySelector(".icons-background") as HTMLDivElement
+    let top = e.target as HTMLDivElement
+
+    icons.style.top = top.scrollTop/1.3 + 300 + "px"
   }
 
   React.useEffect(() => {
@@ -97,11 +102,11 @@ export default function App() {
       if(firstChild) firstChild.classList.toggle("active", e.deltaY > 0)
     }}>
     <SideBar/>
-    <section className="list">
+    <section className="list" id="top">
       <UserTop />
       <ContactBlock />
     </section>
-    <div className="icons-background">
+    <div className="icons-background" style={{top: 0}}>
       <FontAwesomeIcon icon={faImage as IconProp}/>
       <FontAwesomeIcon icon={faGear as IconProp}/>
       <FontAwesomeIcon icon={faCode as IconProp}/>

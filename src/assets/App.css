@@ -415,7 +415,6 @@ main {
 }
 
 .projects-list > li span {
-  margin-left: auto;
   border-radius: 50%;
   width: 1.5rem;
   height: 1.5rem;
@@ -434,22 +433,22 @@ main {
   background-color: var(--cblack);
 }
 
-.projects-list > li .top::before {
-  content: "";
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: var(--cwhite);
-}
 .projects-list > li > .top {
   position: relative;
   border: 1px solid transparent;
   border-radius: 5px;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem .7rem;
   display: flex;
   align-items: center;
   gap: 0.7rem;
   cursor:pointer;
+  flex-wrap: wrap;
+}
+.projects-list > li > .top > h4 {
+  margin: 0.5rem auto 0.5rem 0;
+}
+.projects-list > li > .top > .tags {
+  margin-left: auto;
 }
 
 .projects-list > li.selected > .top {
