@@ -30,6 +30,10 @@ body {
   overflow: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -575,13 +579,13 @@ main {
   }
 }
 
-.projects-list > li .desc {
+.projects-list > li .desc, .career-desc {
   color: var(--cwhitesec);
   overflow: hidden;
   position: relative;
 }
 
-.projects-list > li .desc::after {
+.projects-list > li .desc::after, .fade-in .career-desc > .pseudo-after {
   content: "";
   position: absolute;
   right: 0;
@@ -592,6 +596,12 @@ main {
   background-color: var(--cblack);
   animation: typing 1s steps(40) forwards;
 }
+
+.pseudo-after {
+  width: 100%;
+  background-color: var(--cdarkblack)!important;
+}
+
 @keyframes typing {
   from {
     width: 100%;
@@ -634,6 +644,90 @@ main {
   height: fit-content;
 }
 
+
+/***/
+
+.timeline {
+  margin-right: 2.5rem;
+  position: relative;
+}
+.fade-in .timeline::before, .fade-in .timeline::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 0;
+  height: 0.3rem;
+  border-radius: 10px;
+  background-color: var(--cwhite);
+  animation: widthExpand 0.65s forwards;
+}
+.fade-in .timeline::after {
+  top: auto;
+  bottom: 0;
+  animation-delay: 2.5s;
+}
+@keyframes widthExpand {
+  to{
+    width: 1.5rem;
+    left: -0.6rem;
+  }
+}
+
+.fade-in .timeline > div {
+  background-color: var(--cwhite);
+  border-radius: 15px;
+  width: 0.3rem;
+  height: 3%;
+  animation: expandTime 2s 0.5s forwards;
+}
+
+@keyframes expandTime {
+  from {
+    height: 3%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+/**/
+
+.career-section {
+  position: relative;
+}
+.fade-in .career-section > .dot {
+  position: absolute;
+  left: calc(-2.65rem - 1rem);
+  width: 0rem;
+  height: 0rem;
+  background-color: var(--cwhite);
+  border-radius: 50%;
+  animation: spawn-timedot 400ms forwards;
+}
+
+@keyframes spawn-timedot {
+  to {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.fade-in .career-title {
+  opacity: 0;
+  left: -0.7rem;
+  position: relative;
+  animation: spawn-text 300ms ease-out forwards;
+}
+
+.fade-in .career-period {
+  opacity: 0;
+  left: -0.7rem;
+  position: relative;
+  animation: spawn-text 300ms ease-out forwards;
+}
+
+/** desc with proyect desc : ".desc::after"*/
 
 /***/
 

@@ -15,14 +15,23 @@ const careerList = [
 
 export default function CareerBlock () {
     return <section id="career" className="block fading">
-      <section className="block-content">
-        {careerList.map(obj => {
-          return <section className='career-section' key={Math.random()}>
-            <h2 className='career-title'>{obj.title}</h2>
-            <div className='career-period'>{obj.period}</div>
-            <p className='career-desc'>{obj.desc}</p>
-          </section>
-        })}
+      <section className="block-content d-flex">
+        <div className="timeline">
+          <div></div>
+        </div>
+        <ul>
+          {careerList.map((obj, i) => {
+            return <section className='career-section' key={Math.random()}>
+              <div className="dot" style={{animationDelay: (i+1 * 0.5)+ "s"}}></div>
+              <h2 className='career-title' style={{animationDelay: (i+1 * 0.5)+ 0.1 + "s"}}>{obj.title}</h2>
+              <div className='career-period' style={{animationDelay: (i+1 * 0.5)+ 0.3 + "s"}}>{obj.period}</div>
+              <p className='career-desc' style={{animationDelay: (i+1 * 0.5)+ 1 + "s"}}>
+                {obj.desc}
+                <div className="pseudo-after" style={{animationDelay: (i+1 * 0.5)+ 0.6 + "s"}}></div>
+              </p>
+            </section>
+          })}
+        </ul>
       </section>
     </section>
   }

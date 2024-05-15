@@ -106,7 +106,7 @@ export default function App() {
       <UserTop />
       <ContactBlock />
     </section>
-    <div className="icons-background" style={{top: 0}}>
+    <div className="icons-background" style={{top: 300}}>
       <FontAwesomeIcon icon={faImage as IconProp}/>
       <FontAwesomeIcon icon={faGear as IconProp}/>
       <FontAwesomeIcon icon={faCode as IconProp}/>
