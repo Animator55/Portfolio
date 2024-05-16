@@ -84,7 +84,7 @@ export default function ProjectsList({ }: Props) {
 
     return <section className='block fading' id='project'>
         <section className='block-content'>
-            <h3>Projects</h3>
+            <h3 className='align-title'>Projects</h3>
             <ul className='projects-list'>
                 {projectsArray.map((el, i: number) => {
                     return <li

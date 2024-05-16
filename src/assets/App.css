@@ -32,6 +32,7 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--clight);
 }
 
 * {
@@ -45,6 +46,10 @@ ul {
 
 .d-flex {
   display: flex;
+}
+
+.align-title {
+  text-align: center;
 }
 
 ::-webkit-scrollbar {
@@ -517,10 +522,6 @@ main {
 }
 
 @keyframes spawn-text {
-  from {
-    left: -0.7rem;
-    opacity: 0;
-  }
   to {
     opacity: 1;
     left: 0;
@@ -597,15 +598,25 @@ main {
   animation: typing 1s steps(40) forwards;
 }
 
-.pseudo-after {
+.fade-in .career-desc > .pseudo-after {
   width: 100%;
   background-color: var(--cdarkblack)!important;
+  animation: typing-reverse 1s steps(40) forwards;
 }
 
 @keyframes typing {
   from {
     width: 100%;
     border-left: 3px solid var(--cwhitesec);
+  }
+}
+@keyframes typing-reverse {
+  from {
+    width: 100%;
+    border-left: 3px solid var(--cwhitesec);
+  }
+  to {
+    width: 0%;
   }
 }
 
@@ -648,7 +659,8 @@ main {
 /***/
 
 .timeline {
-  margin-right: 2.5rem;
+  margin-right: 5rem;
+  margin-left: 2.5rem;
   position: relative;
 }
 .fade-in .timeline::before, .fade-in .timeline::after{
@@ -696,24 +708,36 @@ main {
 .career-section {
   position: relative;
 }
+.career-section:first-child {
+  margin-top: 1rem;
+}
 .fade-in .career-section > .dot {
   position: absolute;
-  left: calc(-2.65rem - 1rem);
-  width: 0rem;
-  height: 0rem;
+  left: calc(-5.1rem - 1rem);
+  width: 2rem;
+  height: 2rem;
   background-color: var(--cwhite);
   border-radius: 50%;
+  transform-origin: center;
+  scale: 0;
   animation: spawn-timedot 400ms forwards;
 }
 
 @keyframes spawn-timedot {
   to {
-    width: 2rem;
-    height: 2rem;
+    scale: 1;
   }
 }
 
 .fade-in .career-title {
+  margin: 0.5rem 0;
+  opacity: 0;
+  left: -2.5rem;
+  position: relative;
+  animation: spawn-text 350ms ease-out forwards;
+}
+.fade-in .career-sub-title {
+  margin: 0;
   opacity: 0;
   left: -0.7rem;
   position: relative;
@@ -721,10 +745,23 @@ main {
 }
 
 .fade-in .career-period {
+  width: fit-content;
+  font-size: 0.75rem;
+  color: var(--cwhitesec);
+  background-color: var(--cdarkgray);
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin: 0;
+  margin-top: 0.5rem;
   opacity: 0;
   left: -0.7rem;
   position: relative;
   animation: spawn-text 300ms ease-out forwards;
+}
+
+.career-desc {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 /** desc with proyect desc : ".desc::after"*/
