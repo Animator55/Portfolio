@@ -17,7 +17,7 @@ type projectType = {
 const projectsArray: projectType[] = [
     {
         name: "Magic Card Game",
-        tags: ["Game", "SinglePlayer", "Multiplayer", "Peerjs", "Mobile"],
+        tags: ["SinglePlayer", "Multiplayer", "Peerjs", "Mobile Game"],
         langs: ["JavaScript", "CSS"],
         desc: "gfbnasjugnais jausbgfjausngikasnmtg giasngiasgmdisgnsi gndsj gndsign disngkisdn gkdnsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
         links: [
