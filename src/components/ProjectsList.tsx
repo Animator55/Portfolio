@@ -82,7 +82,7 @@ const iconSelected: iconSelector = {
 export default function ProjectsList({ }: Props) {
     const [selected, setSelected] = React.useState(-1)
 
-    return <section className='block fading' id='project'>
+    return <section className='block fading'>
         <section className='block-content'>
             <h3 className='align-title'>Projects</h3>
             <ul className='projects-list'>

@@ -19,7 +19,7 @@ const careerList = [
 
 export default function CareerBlock () {
     const length = careerList.length
-    return <section id="career" className="block fading">
+    return <section id="career" className="block point fading">
       <section className="block-content">
         <h3 className="align-title">Carrier</h3>
         <section className="d-flex">
@@ -38,10 +38,10 @@ export default function CareerBlock () {
                   {obj.subTitle !== "" && <a href={obj.subLink} className='career-sub-title' style={{animationDelay: delay+ 0.4 + "s"}}>{obj.subTitle}</a>}
                 </div>
                 <div className='career-period' style={{animationDelay: delay+ 0.5 + "s"}}>{obj.period}</div>
-                <p className='career-desc' style={{animationDelay: delay+ 1.1 + "s"}}>
+                <div className='career-desc' style={{animationDelay: delay+ 1.1 + "s"}}>
                   {obj.desc}
                   <div className="pseudo-after" style={{animationDelay: delay+ 0.8 + "s"}}></div>
-                </p>
+                </div>
               </section>
             })}
           </ul>

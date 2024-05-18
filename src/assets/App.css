@@ -83,6 +83,9 @@ main {
 .list>* {
   width: 70%;
   margin: auto;
+}
+
+.point {
   top: -2rem;
   transition: top 500ms ease-out, opacity 300ms;
   opacity: 0;
@@ -725,6 +728,7 @@ main {
 .fade-in .career-section {
   position: relative;
   height: fit-content;
+  margin-bottom: 1rem;
   animation: spawn-carrier 2s forwards;
 }
 @keyframes spawn-carrier {

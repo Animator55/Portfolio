@@ -22,9 +22,6 @@ export default function App() {
         <a href="#tech" className="side-button">
           <FontAwesomeIcon icon={faCode as IconProp}/>
         </a>
-        <a href="#project" className="side-button">
-          <FontAwesomeIcon icon={faList as IconProp}/>
-        </a>
         <a href="#career" className="side-button">
           <FontAwesomeIcon icon={faCalendarDays as IconProp}/>
         </a>
@@ -55,7 +52,7 @@ export default function App() {
     </section>
   }
   const TechBlock = () => {
-    return <section id="tech" className="tech block fading">
+    return <section className="tech block fading">
       <section className="block-content">
       <h3 style={{textAlign: "center"}}>Technologies</h3>
         <div className="icon-list">
@@ -74,7 +71,7 @@ export default function App() {
   /////
 
   const ScrollHandler = (e: Event) => {
-    let blocks = document.querySelectorAll(".fading")
+    let blocks = document.querySelectorAll(".point")
     let buttons = document.querySelectorAll(".side-button")
 
     for (let i = 0; i < blocks.length; i++) {
@@ -114,7 +111,7 @@ export default function App() {
       <FontAwesomeIcon icon={faLaptopCode as IconProp}/>
       <FontAwesomeIcon icon={faTags as IconProp}/>
     </div>
-    <section className="list">
+    <section className="list point" id="tech">
       <TechBlock />
       <ProjectsList/>
     </section>
