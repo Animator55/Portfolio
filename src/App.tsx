@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCss3Alt, faGithub, faHtml5, faLinkedin, faPhp, faReact, faSquareJs } from "@fortawesome/free-brands-svg-icons"
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { faImage, faUser } from "@fortawesome/free-regular-svg-icons"
-import { faCode, faGear, faLaptopCode, faList, faScroll, faTags } from "@fortawesome/free-solid-svg-icons"
+import { faCode, faGear, faLaptopCode, faScroll, faTags } from "@fortawesome/free-solid-svg-icons"
 import ProjectsList from "./components/ProjectsList"
 import CareerBlock from "./components/CarrerBlock"
 import AboutMeBlock from "./components/AboutBlock"
@@ -65,8 +65,6 @@ export default function App() {
       </section>
     </section>
   }
-
-
 
   /////
 

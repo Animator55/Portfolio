@@ -38,7 +38,7 @@ const projectsArray: projectType[] = [
     {
         name: "LocalChat",
         tags: ["Mobile", "Peerjs"],
-        langs: ["CSS", "JavaScript"],
+        langs: [ "JavaScript", "CSS"],
         desc: "fas fasgfbnasjugnais jausbgfjfasfnas junfasinsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
         links: [
             "https://github.com/Animator55/LocalChat",
