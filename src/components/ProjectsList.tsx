@@ -16,6 +16,16 @@ type projectType = {
 
 const projectsArray: projectType[] = [
     {
+        name: "Dungeon Crawler",
+        tags: ["SinglePlayer", "Mobile Game"],
+        langs: ["React TypeScript", "SCSS"],
+        desc: "gfbnasjugnais jausbgfjausngikasnmtg giasngiasgmdisgnsi gndsj gndsign disngkisdn gkdnsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
+        links: [
+            "https://github.com/Animator55/DungeonCrawler",
+            "https://dungeon-crawler.nahuelibarra.com"
+        ]
+    },
+    {
         name: "Magic Card Game",
         tags: ["SinglePlayer", "Multiplayer", "Peerjs", "Mobile Game"],
         langs: ["JavaScript", "CSS"],
@@ -26,13 +36,33 @@ const projectsArray: projectType[] = [
         ]
     },
     {
-        name: "Restaurant Test",
-        tags: ["Mobile", "WIP"],
-        langs: ["JavaScript", "CSS"],
+        name: "RegBox",
+        tags: ["Main project"],
+        langs: ["React TypeScript", "PeerJs", "CSS"],
         desc: "tyry gfbnasjugnais jausbgfjausngikasnhdfjs hndfkjhn tgfdaesg.",
         links: [
-            "https://github.com/Animator55/Resto-test-mobile",
-            ""
+            "https://github.com/Animator55/RegBox",
+            "https://regbox.nahuelibarra.com",
+        ]
+    },
+    {
+        name: "RegBox Pawn",
+        tags: ["Main project"],
+        langs: ["React TypeScript", "PeerJs", "CSS"],
+        desc: "tyry gfbnasjugnais jausbgfjausngikasnhdfjs hndfkjhn tgfdaesg.",
+        links: [
+            "https://github.com/Animator55/RegBox-Pawn",
+            "https://pawn.regbox.nahuelibarra.com",
+        ]
+    },
+    {
+        name: "HTMLEditor",
+        tags: ["Design Creator"],
+        langs: ["React TypeScript", "CSS"],
+        desc: "tyry gfbnasjugnais jausbgfjausngikasnhdfjs hndfkjhn tgfdaesg.",
+        links: [
+            "https://github.com/Animator55/HTMLEditor",
+            "https://htmleditor.nahuelibarra.com",
         ]
     },
     {
@@ -42,6 +72,26 @@ const projectsArray: projectType[] = [
         desc: "fas fasgfbnasjugnais jausbgfjfasfnas junfasinsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
         links: [
             "https://github.com/Animator55/LocalChat",
+            ""
+        ]
+    },
+    {
+        name: "Minesweeper",
+        tags: ["Mobile Game", "SinglePlayer"],
+        langs: ["React TypeScript","CSS"],
+        desc: "fas fasgfbnasjugnais jausbgfjfasfnas junfasinsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
+        links: [
+            "https://github.com/Animator55/minesweeper",
+            "https://minesweeper.nahuelibarra.com"
+        ]
+    },
+    {
+        name: "TicTacToe",
+        tags: ["Mobile Game", "SinglePlayer"],
+        langs: ["Svelte","CSS"],
+        desc: "fas fasgfbnasjugnais jausbgfjfasfnas junfasinsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
+        links: [
+            "https://github.com/Animator55/TicTacToe",
             ""
         ]
     },
@@ -66,18 +116,6 @@ const projectsArray: projectType[] = [
         ]
     },
 ]
-
-type iconSelector = {
-    [key: string]: string
-}
-
-const iconSelected: iconSelector = {
-    "JavaScript": "#fff",
-    "TypeScript": "#fff",
-    "HTML": "#fff",
-    "CSS": "#fff",
-    "PHP": "#fff",
-}
 
 export default function ProjectsList({ }: Props) {
     const [selected, setSelected] = React.useState(-1)
@@ -104,7 +142,7 @@ export default function ProjectsList({ }: Props) {
                             <div className='langs'>
                                 {el.langs.map((lang, i) => {
                                     return <div key={Math.random()}>
-                                        <div style={{ backgroundColor: iconSelected[lang], animationDelay:100*(i+1)+ "ms"}}></div>
+                                        <div style={{ backgroundColor: "#fff", animationDelay:100*(i+1)+ "ms"}}></div>
                                         <p style={{animationDelay:400*(i+1)+ "ms"}}>{lang}</p>
                                     </div>
                                 })}
