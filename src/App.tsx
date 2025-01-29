@@ -1,7 +1,7 @@
 import React from "react"
 import "./assets/App.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCss3Alt, faGithub, faHtml5, faLinkedin, faPhp, faReact, faSquareJs } from "@fortawesome/free-brands-svg-icons"
+import { faCss3Alt, faGithub, faHtml5, faLinkedin, faNodeJs, faPhp, faReact, faSass, faSquareJs } from "@fortawesome/free-brands-svg-icons"
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { faImage, faUser } from "@fortawesome/free-regular-svg-icons"
 import { faCode, faGear, faLaptopCode, faScroll, faTags } from "@fortawesome/free-solid-svg-icons"
@@ -9,6 +9,7 @@ import ProjectsList from "./components/ProjectsList"
 import CareerBlock from "./components/CarrerBlock"
 import AboutMeBlock from "./components/AboutBlock"
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons/faCalendarDays"
+import {Svelte, TypeScript} from "./assets/svgs"
 
 
 export default function App() {
@@ -36,19 +37,17 @@ export default function App() {
     return <div id="user"className="top-block fade-in">
         <section>
           <div>
-            <h1>Nahuel Ibarra</h1>
-            <p>Front End Developer</p>
+            <h1 className="top-name show-texting">Nahuel </h1>
+            <h1 className="top-name show-texting">Iván Ibarra</h1>
+            <p className="top-title show-texting" style={{animationDelay: "1s"}} >Front End Developer</p>
           </div>
         </section>
-        <div className='user-image'>
-          <img />
-        </div>
     </div>
   }
   const ContactBlock = () => {
     return <section id="contact" className='contact fade-in'>
-        <button className='contact-button'><FontAwesomeIcon icon={faGithub as IconProp} /> GitHub</button>
-        <button className='contact-button'><FontAwesomeIcon icon={faLinkedin as IconProp} />LinkedIn</button>
+        <button className='contact-button'><a href="https://github.com/Animator55" target="_blank"><FontAwesomeIcon icon={faGithub as IconProp} /> GitHub</a></button>
+        <button className='contact-button' style={{animationDelay: "2s"}}><a href="https://www.linkedin.com/in/nahuel-ibarra" target="_blank"><FontAwesomeIcon icon={faLinkedin as IconProp} />LinkedIn</a></button>
     </section>
   }
   const TechBlock = () => {
@@ -58,9 +57,13 @@ export default function App() {
         <div className="icon-list">
           <FontAwesomeIcon icon={faHtml5 as IconProp} />
           <FontAwesomeIcon icon={faCss3Alt as IconProp} />
-          <FontAwesomeIcon icon={faSquareJs as IconProp} />
-          <FontAwesomeIcon icon={faReact as IconProp} />
+          <FontAwesomeIcon icon={faSass as IconProp} />
+          <Svelte/>
           <FontAwesomeIcon icon={faPhp as IconProp} />
+          <FontAwesomeIcon icon={faNodeJs as IconProp} />
+          <FontAwesomeIcon icon={faSquareJs as IconProp} />
+          <TypeScript />
+          <FontAwesomeIcon icon={faReact as IconProp} />
         </div>
       </section>
     </section>

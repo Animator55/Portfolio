@@ -235,15 +235,33 @@ main {
 
 
 /**/
+.top-name, .top-title {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  opacity: 0;
+  position: relative;
+  animation: fade-in 300ms .1s forwards;
+}
+.top-name {
+  margin: 0.2rem 0;
+  font-size: 3rem;
+  width: fit-content;
+}
+
+.top-title {
+  width: fit-content;
+}
+
+.top-title.show-texting::after {
+  animation-delay: 1s!important;
+}
 
 .top-block {
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(0deg, var(--cdarkblack), transparent);
-  border-radius: 10px;
-  box-shadow: 0 0 5px var(--clight);
   color: var(--cwhite);
-  margin: 4rem auto 1.5rem;
+  margin: 8rem auto 2rem;
   padding: 1rem 5%;
   width: 90%;
 }
@@ -261,23 +279,48 @@ main {
 .contact {
   display: flex;
   align-items: center;
-  width: 100%!important;
   gap: 1rem;
+  width: 90%;
+  margin: 0rem 5% 3rem;
 }
 
+.contact-button:hover {
+  background-color: transparent;
+  transition: background-color 300ms, color 300ms;
+  color: var(--cwhite);
+}
 .contact-button {
   background-color: var(--cwhite);
   color: var(--cdarkgray);
+  transition: background-color 300ms, color 300ms;
+  border: 4px solid var(--cwhite);
+  display: flex;
+  border-radius: 15px;
+  width: fit-content;
+  opacity: 0;
+  left: 2rem;
+  position: relative;
+  animation: fade-in 300ms 1.8s forwards;
+}
+@keyframes fade-in {
+  to{
+    opacity: 1;
+    left: 0;
+  }
+}
+.contact-button > a {
+  text-decoration: none;
+  color:currentColor;
   font-weight: bolder;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
-  padding: 0.7rem 1.1rem;
-  border-radius: 4px;
+  padding: 0.7rem 1.3rem;
+  border-radius: 15px;
+  width: fit-content;
   border: none;
-  width: 100%;
 }
 
 
@@ -288,17 +331,19 @@ main {
 }
 
 .tech h3 {
-  margin: 0 0 1.4rem;
+  margin: 1rem 0 2rem;
 }
 
 .icon-list {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 1rem 3rem;
+  margin-bottom: 1rem;
 }
 
 .icon-list>* {
-  font-size: 2.4rem;
+  font-size: 3rem;
 }
 
 /**/
@@ -466,14 +511,14 @@ main {
   position: relative;
 }
 
-.projects-list > li .desc::after, .fade-in .career-desc > .pseudo-after {
+.show-texting::after, .fade-in .career-desc > .pseudo-after {
   content: "";
   position: absolute;
   right: 0;
   top: 0;
-  width: 0%;
   height: 100%;
-  border-left: 3px solid transparent;
+  width: 100%;
+  border-left: 0px solid transparent;
   background-color: var(--cblack);
   animation: typing 1s steps(40) forwards;
 }
@@ -488,6 +533,9 @@ main {
   from {
     width: 100%;
     border-left: 3px solid var(--cwhitesec);
+  }
+  to {
+    width: 0%;
   }
 }
 @keyframes typing-reverse {
@@ -507,15 +555,21 @@ main {
   margin-left: auto;
 }
 
+.projects-list .buttons > *:hover {
+  background-color: transparent;
+  color: var(--cgreen);
+  transition: background-color 300ms, color 300ms;
+}
 .projects-list .buttons > * {
   padding: 0.5rem 1.2rem;
+  transition: background-color 300ms, color 300ms;
   background-color: var(--cgreen);
+  border: 4px solid var(--cgreen);
   border-radius: 5px;
   font-size: 1.1rem;
   font-weight: bolder;
   color: var(--c);
   cursor: pointer;
-  border: none;
 }
 
 .tags {

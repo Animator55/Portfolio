@@ -16,26 +16,6 @@ type projectType = {
 
 const projectsArray: projectType[] = [
     {
-        name: "Dungeon Crawler",
-        tags: ["SinglePlayer", "Mobile Game"],
-        langs: ["React TypeScript", "SCSS"],
-        desc: "Dungeon Roguelike theme mobile game. Uses a simple combat statistics structure to make the whole game like a cokkie clicker type with lootboxes.",
-        links: [
-            "https://github.com/Animator55/DungeonCrawler",
-            "https://dungeon-crawler.nahuelibarra.com"
-        ]
-    },
-    {
-        name: "Magic Card Game",
-        tags: ["SinglePlayer", "Multiplayer", "Peerjs", "Mobile Game"],
-        langs: ["JavaScript", "CSS"],
-        desc: "A local multiplayer or singleplayer game of cards. The logic behind of the connection its the use of PeerJs P2P connection.",
-        links: [
-            "https://github.com/Animator55/Card-game-test",
-            "https://magic-cards-duels.netlify.app"
-        ]
-    },
-    {
         name: "RegBox",
         tags: ["Main project"],
         langs: ["React TypeScript", "PeerJs", "CSS"],
@@ -76,10 +56,40 @@ const projectsArray: projectType[] = [
         ]
     },
     {
+        name: "TextEditor",
+        tags: ["Design", "Test", "Regex"],
+        langs: ["JavaScript", "CSS"],
+        desc: "An example of using regex.",
+        links: [
+            "https://github.com/Animator55/TextEditor",
+            ""
+        ]
+    },
+    {
+        name: "Dungeon Crawler",
+        tags: ["SinglePlayer", "Mobile Game"],
+        langs: ["React TypeScript", "SCSS"],
+        desc: "Dungeon Roguelike theme mobile game. Uses a simple combat statistics structure to make the whole game like a cokkie clicker type with lootboxes.",
+        links: [
+            "https://github.com/Animator55/DungeonCrawler",
+            "https://dungeon-crawler.nahuelibarra.com"
+        ]
+    },
+    {
+        name: "Magic Card Game",
+        tags: ["SinglePlayer", "Multiplayer", "Peerjs", "Mobile Game"],
+        langs: ["JavaScript", "CSS"],
+        desc: "A local multiplayer or singleplayer game of cards. The logic behind of the connection its the use of PeerJs P2P connection.",
+        links: [
+            "https://github.com/Animator55/Card-game-test",
+            "https://magic-cards-duels.netlify.app"
+        ]
+    },
+    {
         name: "Minesweeper",
         tags: ["Mobile Game", "SinglePlayer"],
         langs: ["React TypeScript","CSS"],
-        desc: "fas fasgfbnasjugnais jausbgfjfasfnas junfasinsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
+        desc: "A simple minesweeper game.",
         links: [
             "https://github.com/Animator55/minesweeper",
             "https://minesweeper.nahuelibarra.com"
@@ -89,7 +99,7 @@ const projectsArray: projectType[] = [
         name: "TicTacToe",
         tags: ["Mobile Game", "SinglePlayer"],
         langs: ["Svelte","CSS"],
-        desc: "fas fasgfbnasjugnais jausbgfjfasfnas junfasinsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
+        desc: "This game is a test for Svelte, does not have any complexity.",
         links: [
             "https://github.com/Animator55/TicTacToe",
             ""
@@ -99,19 +109,9 @@ const projectsArray: projectType[] = [
         name: "Auth Design",
         tags: ["Design", "Component"],
         langs: ["CSS"],
-        desc: "fas fasgfbnasjugnais jausbgfjfasfnas junfasinsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
+        desc: "An auth design using React to port to any project that i would want to use.",
         links: [
             "https://github.com/Animator55/Auth-design",
-            ""
-        ]
-    },
-    {
-        name: "TextEditor",
-        tags: ["Design", "Test", "Regex"],
-        langs: ["JavaScript", "CSS"],
-        desc: "fas fasgfbnasjugnais jausbgfjfasfnas junfasinsg mjdfnhj dnfj hdfskghdfjs hndfkjhn tgfdaesg.",
-        links: [
-            "https://github.com/Animator55/TextEditor",
             ""
         ]
     },
@@ -126,6 +126,7 @@ export default function ProjectsList({ }: Props) {
             <ul className='projects-list'>
                 {projectsArray.map((el, i: number) => {
                     return <li
+                        id={el.name}
                         className={selected === i ? "selected" : ""}
                         key={Math.random()}
                     >
@@ -147,7 +148,7 @@ export default function ProjectsList({ }: Props) {
                                     </div>
                                 })}
                             </div>
-                            <div className='desc'>{el.desc}</div>
+                            <div className='desc show-texting'>{el.desc}</div>
                             <div className="buttons">
                                 {el.links.map((link, i)=>{
                                     if(link === "") return

@@ -5,14 +5,14 @@ const careerList = [
       subTitle: "",
       subLink: "",
       period: "MAY 2023 to Present Day",
-      desc: "ofnasdiofkmasf fosnafkimnasfkimjas fasnf kjasinfkjinasdfjdnsfjbdnsjf dsjfasdjf jas fjasjfjas fdasf djas nf asfas fasf as f."
+      desc: "Period of time that i mainly made RegBox and the other projects in my list, improved my knowledge and worked with clients."
     },
     {
       title: "Front End Developer",
       subTitle: "@ Do2 Software",
       subLink: "https://www.do2software.com/",
       period: "MAY 2022 to MAY 2023",
-      desc: "ofnasdiofkmasf fosnafkimnasfkimjas fasnf kjasinfkjinasdfjdnsfjbdnsjf dsjfasdjf jas fjasjfjas fdasf djas nf asfas fasf as f."
+      desc: "In a low position of Junior, i used to work in Do2Software as a Front End Developer and participated in projects like Octagonal and others that may changed its names."
     },
   ]
 
