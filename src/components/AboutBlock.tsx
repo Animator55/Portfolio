@@ -1,4 +1,10 @@
-export default function AboutMeBlock() {
+
+type Props = {
+  lang: "es" | "en"
+}
+
+
+export default function AboutMeBlock({lang}: Props) {
   const text = {
     en: `<p>I was born in Argentina and since I was approximately 11 years old I have been passionate about programming and I have started down the path of GameDev Developer.</p>
     <p>Some of my projects show my appreciation for doing them, cases like <a href="#Dungeon Crawler">Dungeon Crawler</a> or <a href="#Magic Card Game">Magic Cards Game</a>.</p>
@@ -12,8 +18,8 @@ export default function AboutMeBlock() {
 
   return <section id="about" className='block point fading'>
     <section className="block-content">
-      <h3 className="align-title">About Me</h3>
-      <div dangerouslySetInnerHTML={{__html: text.en}}></div>
+      <h3 className="align-title">{lang === "en" ? "About Me" : "Sobre mí"}</h3>
+      <div dangerouslySetInnerHTML={{__html: text[lang]}}></div>
     </section>
   </section>
 }

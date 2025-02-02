@@ -3,7 +3,9 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
-type Props = {}
+type Props = {
+    lang: "es" | "en"
+}
 
 
 type projectType = {
@@ -128,12 +130,12 @@ const projectsArray: projectType[] = [
     },
 ]
 
-export default function ProjectsList({ }: Props) {
+export default function ProjectsList({lang }: Props) {
     const [selected, setSelected] = React.useState(-1)
 
     return <section className='block fading'>
         <section className='block-content'>
-            <h3 className='align-title'>Projects</h3>
+            <h3 className='align-title'>{lang ==="en" ? "Projects" : "Proyectos"}</h3>
             <ul className='projects-list'>
                 {projectsArray.map((el, i: number) => {
                     return <li
@@ -159,7 +161,7 @@ export default function ProjectsList({ }: Props) {
                                     </div>
                                 })}
                             </div>
-                            <div className='desc show-texting'>{el.desc}</div>
+                            <div className='desc show-texting'>{lang === "en" ? el.desc : el.descEs}</div>
                             <div className="buttons">
                                 {el.links.map((link, i) => {
                                     if (link === "") return

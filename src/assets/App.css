@@ -511,6 +511,16 @@ main {
   position: relative;
 }
 
+.lang-button {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background-color: transparent;
+  color: var(--cwhitesec);
+  border: none;
+  cursor: pointer;
+}
+
 .show-texting::after, .fade-in .career-desc > .pseudo-after {
   content: "";
   position: absolute;

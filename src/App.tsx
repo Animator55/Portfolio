@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCss3Alt, faGithub, faHtml5, faLinkedin, faNodeJs, faPhp, faReact, faSass, faSquareJs } from "@fortawesome/free-brands-svg-icons"
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { faImage, faUser } from "@fortawesome/free-regular-svg-icons"
-import { faCode, faGear, faLaptopCode, faScroll, faTags } from "@fortawesome/free-solid-svg-icons"
+import { faCode, faGear, faGlobe, faLaptopCode, faScroll, faTags } from "@fortawesome/free-solid-svg-icons"
 import ProjectsList from "./components/ProjectsList"
 import CareerBlock from "./components/CarrerBlock"
 import AboutMeBlock from "./components/AboutBlock"
@@ -13,6 +13,7 @@ import {Svelte, TypeScript} from "./assets/svgs"
 
 
 export default function App() {
+  const [lang, setLang] = React.useState<"es" | "en">("en")
 
   const SideBar = ()=>{
     return <section className="side-bar">
@@ -29,6 +30,10 @@ export default function App() {
         <a href="#about" className="side-button">
           <FontAwesomeIcon icon={faScroll as IconProp}/>
         </a>
+        <button className="lang-button" onClick={()=>{setLang(lang === "en" ? "es" : "en")}}>
+          <FontAwesomeIcon icon={faGlobe as IconProp}/>
+          {lang}
+          </button>
       </div>
     </section>
   }
@@ -39,7 +44,9 @@ export default function App() {
           <div>
             <h1 className="top-name show-texting">Nahuel </h1>
             <h1 className="top-name show-texting">Iván Ibarra</h1>
-            <p className="top-title show-texting" style={{animationDelay: "1s"}} >Front End Developer</p>
+            <p className="top-title show-texting" style={{animationDelay: "1s"}} >
+              Web Developer
+            </p>
           </div>
         </section>
     </div>
@@ -53,7 +60,7 @@ export default function App() {
   const TechBlock = () => {
     return <section className="tech block fading">
       <section className="block-content">
-      <h3 style={{textAlign: "center"}}>Technologies</h3>
+      <h3 style={{textAlign: "center"}}>{lang === "en" ? "Technologies" : "Tecnologías"}</h3>
         <div className="icon-list">
           <FontAwesomeIcon icon={faHtml5 as IconProp} />
           <FontAwesomeIcon icon={faCss3Alt as IconProp} />
@@ -114,11 +121,11 @@ export default function App() {
     </div>
     <section className="list point" id="tech">
       <TechBlock />
-      <ProjectsList/>
+      <ProjectsList lang={lang}/>
     </section>
     <section className="list">
       <CareerBlock />
-      <AboutMeBlock />
+      <AboutMeBlock lang={lang}/>
     </section>
   </main>
 }
