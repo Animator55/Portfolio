@@ -124,7 +124,7 @@ export default function App() {
       <ProjectsList lang={lang}/>
     </section>
     <section className="list">
-      <CareerBlock />
+      <CareerBlock lang={lang}/>
       <AboutMeBlock lang={lang}/>
     </section>
   </main>

@@ -5,23 +5,29 @@ const careerList = [
       subTitle: "",
       subLink: "",
       period: "MAY 2023 to Present Day",
-      desc: "Period of time that i mainly made RegBox and the other projects in my list, improved my knowledge and worked with clients."
+      desc: "Period of time where I mainly did RegBox and the other projects on my list, improved my knowledge and worked with clients.",
+      descEs: "Período de tiempo en el que hice principalmente RegBox y los otros proyectos de mi lista, mejoré mis conocimientos y trabajé con clientes."
     },
     {
       title: "Front End Developer",
       subTitle: "@ Do2 Software",
       subLink: "https://www.do2software.com/",
-      period: "MAY 2022 to MAY 2023",
-      desc: "In a low position of Junior, i used to work in Do2Software as a Front End Developer and participated in projects like Octagonal and others that may changed its names."
+      period: "MAY 2022 to JAN 2025",
+      desc: "I worked at Do2 Software as a Full Stack developer and Front End developer mainly, I participated in projects like Octagonal and others.",
+      descEs: "Trabajé en Do2 Software como desarrollador Full Stack y desarrollador Front End principalmente, participé en proyectos como Octagonal y otros."
     },
   ]
 
 
-export default function CareerBlock () {
+type Props = {
+  lang: "es" | "en"
+}
+
+export default function CareerBlock ({lang}:Props) {
     const length = careerList.length
     return <section id="career" className="block point fading">
       <section className="block-content">
-        <h3 className="align-title">Carrier</h3>
+        <h3 className="align-title">{lang === "en" ? "Carrier" : "Experiencia"}</h3>
         <section className="d-flex">
           <div className="timeline">
             <p className="time">Present</p>
@@ -39,7 +45,7 @@ export default function CareerBlock () {
                 </div>
                 <div className='career-period' style={{animationDelay: delay+ 0.5 + "s"}}>{obj.period}</div>
                 <div className='career-desc' style={{animationDelay: delay+ 1.1 + "s"}}>
-                  {obj.desc}
+                  {lang === "en" ? obj.desc: obj.descEs}
                   <div className="pseudo-after" style={{animationDelay: delay+ 0.8 + "s"}}></div>
                 </div>
               </section>
