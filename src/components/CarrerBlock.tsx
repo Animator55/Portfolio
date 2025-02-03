@@ -9,12 +9,20 @@ const careerList = [
       descEs: "Período de tiempo en el que hice principalmente RegBox y los otros proyectos de mi lista, mejoré mis conocimientos y trabajé con clientes."
     },
     {
-      title: "Front End Developer",
+      title: "Full Stack Developer",
       subTitle: "@ Do2 Software",
       subLink: "https://www.do2software.com/",
-      period: "MAY 2022 to JAN 2025",
+      period: "NOV 2022 to JAN 2025",
       desc: "I worked at Do2 Software as a Full Stack developer and Front End developer mainly, I participated in projects like Octagonal and others.",
       descEs: "Trabajé en Do2 Software como desarrollador Full Stack y desarrollador Front End principalmente, participé en proyectos como Octagonal y otros."
+    },
+    {
+      title: "Junior Front End Developer",
+      subTitle: "@ Do2 Software",
+      subLink: "https://www.do2software.com/",
+      period: "MAY 2022 to NOV 2022",
+      desc: "Part-time job as Front End Developer",
+      descEs: "Trabajo de media jornada como Front End Developer."
     },
   ]
 
