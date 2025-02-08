@@ -91,6 +91,8 @@ export default function App() {
       buttons[i+1].classList.toggle("active", revealTop < windowHeight - (offset + 200))
     }
 
+    if(window.innerWidth < 750) return
+
     let icons = document.querySelector(".icons-background") as HTMLDivElement
     let top = e.target as HTMLDivElement
 

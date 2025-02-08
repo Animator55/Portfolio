@@ -762,8 +762,19 @@ main {
     flex-direction: column-reverse;
   }
 
+  .tags {
+    flex-wrap: wrap;
+  }
+
   .user-image {
     width: 100%;
     height: 50vh;
+  }
+  .contact {
+    flex-direction: column;
+  }
+  .contact-button {
+    width: 100%;
+    justify-content: center;
   }
 }
