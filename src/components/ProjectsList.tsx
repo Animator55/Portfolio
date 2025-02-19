@@ -107,6 +107,17 @@ const projectsArray: projectType[] = [
         ]
     },
     {
+        name: "Svelte User List",
+        tags: ["Test", "User management"],
+        langs: ["Svelte", "TypeScript"],
+        desc: "This is a test for Svelte, does not have any complexity, uses another private project to simulate database connections but it stays offline for showing.",
+        descEs: "Esta es una prueba para probar Svelte, no tiene demasiada complejidad, utiliza otro proyecto privado para simular conecciones de base de datos pero se mantiene offline como muestra.",
+        links: [
+            "https://github.com/Animator55/Svelte-UserList",
+            ""
+        ]
+    },
+    {
         name: "TicTacToe",
         tags: ["Mobile Game", "SinglePlayer"],
         langs: ["Svelte", "CSS"],
@@ -115,6 +126,17 @@ const projectsArray: projectType[] = [
         links: [
             "https://github.com/Animator55/TicTacToe",
             ""
+        ]
+    },
+    {
+        name: "Grid Test Gallery",
+        tags: ["Design", "Component"],
+        langs: ["SCSS", "CSS"],
+        desc: "A grid design that has procedural expansion for scrolling.",
+        descEs: "Un diseño de grilla con expansion procedural para mostrar.",
+        links: [
+            "https://github.com/Animator55/GridTest",
+            "https://gridgallery.nahuelibarra.com"
         ]
     },
     {
