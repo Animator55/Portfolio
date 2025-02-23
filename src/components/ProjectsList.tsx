@@ -140,6 +140,17 @@ const projectsArray: projectType[] = [
         ]
     },
     {
+        name: "Hotel Landing",
+        tags: ["Design", "React TypeScript", "CSS"],
+        langs: ["CSS", "React TypeScript"],
+        desc: "An hotel landing design using React TypeScript and CSS.",
+        descEs: "Un diseño de landing de Hotel usando React TypeScript y CSS.",
+        links: [
+            "https://github.com/Animator55/HotelLanding",
+            "https://hotellanding.nahuelibarra.com"
+        ]
+    },
+    {
         name: "Auth Design",
         tags: ["Design", "Component"],
         langs: ["CSS"],
@@ -187,7 +198,7 @@ export default function ProjectsList({lang }: Props) {
                             <div className="buttons">
                                 {el.links.map((link, i) => {
                                     if (link === "") return
-                                    return <a key={Math.random()} href={link}>
+                                    return <a key={Math.random()} href={link} target="_blank">
                                         {i === 0 ? "GitHub" : "Test"}
                                     </a>
                                 })}
