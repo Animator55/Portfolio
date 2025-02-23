@@ -129,6 +129,17 @@ const projectsArray: projectType[] = [
         ]
     },
     {
+        name: "Native Chat Design",
+        tags: ["Design", "React Native"],
+        langs: ["React Native", "Expo"],
+        desc: "Mobile chat application design without functionalities.",
+        descEs: "Diseño de aplicacion mobile de chats sin funcionalidades.",
+        links: [
+            "https://github.com/Animator55/nativetestapp",
+            ""
+        ]
+    },
+    {
         name: "Grid Test Gallery",
         tags: ["Design", "Component"],
         langs: ["SCSS", "CSS"],
