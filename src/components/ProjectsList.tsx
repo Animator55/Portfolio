@@ -118,6 +118,17 @@ const projectsArray: projectType[] = [
         ]
     },
     {
+        name: "Chess Python",
+        tags: ["Game", "MultiPlayer Local", "Test"],
+        langs: ["Python","Tkinter"],
+        desc: "This game is a test for Python. Note: Prevent auto Check (Showing the King), Blocking Moves when Check, Castling and En Passant not included.",
+        descEs: "Este juego es una prueba para probar Python. Nota: Prevenir auto Check (Mostrar el Rey), Bloquear movimientos cuando hay jaque, Enroque y En Passant no fueron incluidos.",
+        links: [
+            "https://github.com/Animator55/ChessPython",
+            ""
+        ]
+    },
+    {
         name: "TicTacToe",
         tags: ["Mobile Game", "SinglePlayer"],
         langs: ["Svelte", "CSS"],

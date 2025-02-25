@@ -1,7 +1,7 @@
 import React from "react"
 import "./assets/App.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCss3Alt, faGithub, faHtml5, faLinkedin, faNodeJs, faPhp, faReact, faSass, faSquareJs } from "@fortawesome/free-brands-svg-icons"
+import { faCss3Alt, faGithub, faHtml5, faLinkedin, faNodeJs, faPhp, faPython, faReact, faSass, faSquareJs } from "@fortawesome/free-brands-svg-icons"
 import { IconProp } from "@fortawesome/fontawesome-svg-core"
 import { faImage, faUser } from "@fortawesome/free-regular-svg-icons"
 import { faCode, faGear, faGlobe, faLaptopCode, faScroll, faTags } from "@fortawesome/free-solid-svg-icons"
@@ -66,6 +66,7 @@ export default function App() {
           <FontAwesomeIcon icon={faCss3Alt as IconProp} />
           <FontAwesomeIcon icon={faSass as IconProp} />
           <Svelte/>
+          <FontAwesomeIcon icon={faPython as IconProp} />
           <FontAwesomeIcon icon={faPhp as IconProp} />
           <FontAwesomeIcon icon={faNodeJs as IconProp} />
           <FontAwesomeIcon icon={faSquareJs as IconProp} />
