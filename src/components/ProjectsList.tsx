@@ -85,6 +85,17 @@ const projectsArray: projectType[] = [
         ]
     },
     {
+        name: "Trivia Questions",
+        tags: ["SinglePlayer", "OpenTrivia API", "Mobile Game"],
+        langs: ["React TypeScript", "CSS"],
+        desc: "Trivia Questions is a quiz game built with React and TypeScript, using the Open Trivia API to provide a wide range of categories and difficulty levels. Designed to be fast and accessible, it allows players to answer questions on general knowledge, science, history, and more, with a simple interface.",
+        descEs: "Trivia Questions es un juego de preguntas y respuestas desarrollado con React y TypeScript, que utiliza la Open Trivia API para ofrecer una gran variedad de categorías y niveles de dificultad. Diseñado para ser rápido y accesible, permite a los jugadores responder preguntas de cultura general, ciencia, historia y más, con una interfaz sencilla.",
+        links: [
+            "https://github.com/Animator55/TriviaQuestions",
+            "https://triviaquestions.nahuelibarra.com"
+        ]
+    },
+    {
         name: "Magic Card Game",
         tags: ["SinglePlayer", "Multiplayer", "Peerjs", "Mobile Game"],
         langs: ["JavaScript", "CSS"],
