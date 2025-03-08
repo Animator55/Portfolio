@@ -59,7 +59,7 @@ const projectsArray: projectType[] = [
         descEs: "Una prueba de peerJs, utilizando el concepto básico de chat.",
         links: [
             "https://github.com/Animator55/LocalChat",
-            ""
+            "https://localchat.nahuelibarra.com",
         ]
     },
     {
