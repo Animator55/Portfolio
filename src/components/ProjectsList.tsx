@@ -54,7 +54,7 @@ const projectsArray: projectType[] = [
     {
         name: "LocalChat",
         tags: ["Mobile", "Peerjs"],
-        langs: ["JavaScript", "CSS"],
+        langs: ["React TypeScript", "CSS"],
         desc: "A peerJs Test, using the basic concept of a chat.",
         descEs: "Una prueba de peerJs, utilizando el concepto básico de chat.",
         links: [
@@ -65,12 +65,12 @@ const projectsArray: projectType[] = [
     {
         name: "TextEditor",
         tags: ["Design", "Test", "Regex"],
-        langs: ["JavaScript", "CSS"],
+        langs: ["React", "CSS"],
         desc: "Functioning as a not very complex text editor, it prioritizes the use of regex and certain ideas to achieve its operation.",
         descEs: "Funcionando como un editor de textos no muy complejo prioriza el uso de regex y ciertas ideaciones para lograr su funcionamiento.",
         links: [
             "https://github.com/Animator55/TextEditor",
-            ""
+            "https://texteditor.nahuelibarra.com",
         ]
     },
     {
